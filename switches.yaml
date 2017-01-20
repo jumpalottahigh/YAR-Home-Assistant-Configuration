@@ -1,0 +1,5 @@
+# Wake on lan Main PC
+- platform: wake_on_lan
+  mac_address: !secret main_computer_mac
+  host: !secret main_computer_ip
+  name: Main Computer

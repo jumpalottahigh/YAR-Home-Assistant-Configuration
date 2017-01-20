@@ -1,0 +1,114 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Yanev Residence
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: !secret home_elevation
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: !secret time_zone
+  customize: !include customize.yaml
+
+# Show links to resources in log and frontend
+#introduction:
+
+# Enables the frontend
+frontend:
+
+http:
+  # Uncomment this to add a password (recommended!)
+  api_password: !secret ha_api_password
+  # Uncomment this if you are using SSL or running in Docker etc
+  # base_url: example.duckdns.org:8123
+
+# Checks for available updates
+updater:
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time.
+history:
+
+# View all events in a logbook
+logbook:
+
+# Track the sun
+sun:
+
+# Text to speech
+tts:
+  platform: google
+
+# Media devices
+media_player:
+  - platform: samsungtv
+    host: !secret samsung_tv_ip
+  - platform: cast
+    host: !secret chromecast_ip
+
+# MQTT
+# Cloudmqtt set up 
+mqtt:
+  broker: !secret mqtt_broker
+  port: !secret mqtt_port
+  client_id: home-assistant-1
+  keepalive: 60
+  username: !secret mqtt_username
+  password: !secret mqtt_password
+
+# Trackers
+# Georgi 6P tracker with Owntracks and cloudmqtt
+device_tracker:
+  - platform: owntracks
+    max_gps_accuracy: 200
+    consider_home: 180
+
+# IFTT Maker channel
+ifttt:
+  key: !secret ifttt_maker_key
+
+# Define zones for triggering actions
+zone:
+  name: Sofi's Work
+  latitude: 60.2974852
+  longitude: 25.3298393
+  radius: 20
+  icon: mdi:beer
+
+zone 2:
+  name: Georgi's Work
+  latitude: 60.1614637
+  longitude: 24.904713
+  icon: mdi:security
+
+###############################################
+# Includes
+###############################################
+
+# Automations
+automation: !include_dir_merge_list automations/
+
+# Cameras
+camera: !include cameras.yaml
+
+# Groups
+group: !include groups.yaml
+
+# Input select
+input_select: !include input_select.yaml
+
+# Input boolean
+# input_boolean: !include input_boolean.yaml
+
+# Weather Prediction
+sensor: !include sensors.yaml
+
+# Switches
+switch: !include switches.yaml

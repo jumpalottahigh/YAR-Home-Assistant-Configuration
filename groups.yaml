@@ -1,0 +1,62 @@
+####VIEWS
+# Change view name to `default_view` to overwrite the default view in the future
+living_room_view:
+  view: yes
+  name: Living Room
+  entities:
+    - group.living_room
+office_view:
+  view: yes
+  name: Office
+  entities:
+    - group.office
+family_view:
+  view: yes
+  name: Family
+  entities:
+    - group.family
+default_view_dev:
+  view: yes
+  entities:
+    - group.family
+    - group.environment
+####GROUPS
+environment:
+  name: Environment
+  entities:
+    - sensor.date
+    - sensor.time
+    - sensor.yr_symbol
+    - sensor.yr_temperature
+    - sensor.yr_windSpeed
+    - sensor.yr_windDirection
+    - sensor.yr_humidity
+    - sensor.yr_fog
+    - sensor.yr_cloudiness
+    - sun.sun
+    - camera.georgi
+    - sensor.speedtest_ping
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+family:
+  name: Family
+  entities:
+    - device_tracker.georgi_6p_georgi_6p
+    - input_select.georgi_status
+    - device_tracker.sofi_ip_sofi_ip
+    - input_select.sofi_status
+living_room:
+  name: Living Room
+  entities:
+    - light.living_room
+    - light.living_room_hue
+    - media_player.living_room_tv
+    - media_player.samsung_tv_remote
+    - input_select.manything_status
+office:
+  name: Office
+  entities:
+    - light.office
+    - light.office_hue
+    - switch.main_computer
+    - camera.office

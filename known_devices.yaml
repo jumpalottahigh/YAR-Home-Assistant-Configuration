@@ -1,0 +1,23 @@
+sofi_ip_sofi_ip:
+  hide_if_away: false
+  mac: !secret sofi_iphone_mac
+  name: Sofi
+  picture: /local/sofi.jpg
+  track: true
+  vendor:
+
+georgi_6p_georgi_6p:
+  hide_if_away: false
+  mac: !secret georgi_nexus6p_mac
+  name: Georgi
+  picture: /local/georgi.jpg
+  track: true
+  vendor:
+
+phone_phone:
+  hide_if_away: false
+  mac:
+  name: phone
+  picture:
+  track: true
+  vendor:

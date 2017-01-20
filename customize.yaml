@@ -1,0 +1,46 @@
+# Example how to provide custom local image
+#light.living_room:
+#  entity_picture: /local/philips-hue.png
+
+# Remove duplicate room / lights until we get more lights per room
+light.living_room_hue:
+  hidden: True
+light.office_hue:
+  hidden: True
+
+# Device tracker
+device_tracker.phone_phone:
+  hidden: True
+
+# Customize media players
+media_player.living_room_tv:
+  friendly_name: Chromecast
+  icon: mdi:monitor
+media_player.samsung_tv_remote:
+  friendly_name: Samsung TV
+  icon: mdi:monitor
+
+# Customize weather service
+sensor.yr_symbol:
+  friendly_name: Weather
+sensor.yr_temperature:
+  friendly_name: Temperature
+sensor.yr_humidity:
+  friendly_name: Humidity
+  icon: mdi:water-percent
+
+# Customize speedtest service
+sensor.speedtest_ping:
+  icon: mdi:arrow-compress
+sensor.speedtest_download:
+  icon: mdi:download
+sensor.speedtest_upload:
+  icon: mdi:upload
+
+# Customize HA internal components
+sun.sun:
+  friendly_name: Sun position
+
+# Switch customizations
+switch.main_computer:
+  icon: mdi:laptop

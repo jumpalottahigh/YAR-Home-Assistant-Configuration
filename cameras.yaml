@@ -1,0 +1,13 @@
+# Shows device_tracker.georgi_6p_georgi_6p on a map.
+- platform: generic
+  name: Georgi's position
+  still_image_url: https://maps.googleapis.com/maps/api/staticmap?center={{ states.device_tracker.georgi_6p_georgi_6p.attributes.latitude }},{{ states.device_tracker.georgi_6p_georgi_6p.attributes.longitude }}&zoom=15&size=500x500&maptype=roadmap&markers=color:blue%7Clabel:P%7C{{ states.device_tracker.georgi_6p_georgi_6p.attributes.latitude }},{{ states.device_tracker.georgi_6p_georgi_6p.attributes.longitude }}
+  limit_refetch_to_url_change: true
+
+- platform: mjpeg
+  name: Office
+  mjpeg_url: !secret camera_office_ip_credentials
+  # Slower image stream
+  # mjpeg_url: http://192.168.10.46:81/snapshot.cgi
+  # username: !secret camera_office_username
+  # password: !secret camera_office_password

@@ -1,0 +1,19 @@
+# Weather sensor
+- platform: yr
+  monitored_conditions:
+  - temperature
+  - symbol
+  - humidity
+
+# Time and date sensor
+- platform: time_date
+  display_options:
+    - 'date'
+    - 'time'
+
+# Net status
+- platform: speedtest
+  monitored_conditions:
+    - ping
+    - download
+    - upload
