@@ -1,0 +1,1 @@
+# YAR-Home-Assistant-Configuration
