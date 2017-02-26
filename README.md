@@ -4,6 +4,7 @@ The YAnev Residence (YAR) configuration for Home Assistant is a work in progress
 
 ## Automations:
 - Living room and office lights on 45 min before sunset and TTS announce on Chromecast
+- Turn on coffee pot at 7:00 and turn it off at 7:05
 - Home/work presence detection
 - Blink living room lights when arrive home
 - ...
