@@ -7,7 +7,20 @@
   action:
     - service: homeassistant.turn_on
       entity_id: group.all_lights
+    - service: homeassistant.turn_on
+      entity_id: switch.livingroom_outlet_1
     - service: tts.google_say
       entity_id: media_player.living_room_tv
       data:
         message: "The sun will set in 45 minutes. Turning on all lights."
+
+# Turn off lights at 23:45
+- alias: "Lights off at 23:45"
+  trigger:
+    - platform: time
+      after: "23:45"
+  action:
+    - service: homeassistant.turn_off
+      entity_id: group.all_lights
+    - service: homeassistant.turn_off
+      entity_id: switch.livingroom_outlet_1

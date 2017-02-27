@@ -5,6 +5,11 @@ living_room_view:
   name: Living Room
   entities:
     - group.living_room
+kitchen_view:
+  view: yes
+  name: Kitchen
+  entities:
+    - group.kitchen
 office_view:
   view: yes
   name: Office
@@ -15,11 +20,6 @@ family_view:
   name: Family
   entities:
     - group.family
-default_view_dev:
-  view: yes
-  entities:
-    - group.family
-    - group.environment
 ####GROUPS
 environment:
   name: Environment
@@ -41,17 +41,25 @@ environment:
 family:
   name: Family
   entities:
-    - device_tracker.georgi_6p_georgi_6p
+    - device_tracker.georgi6p_gp
+    - device_tracker.sofiip_sp
     - input_select.georgi_status
-    - device_tracker.sofi_ip_sofi_ip
     - input_select.sofi_status
+kitchen:
+  name: Kitchen
+  entities:
+    - switch.kitchen_outlet_2
 living_room:
   name: Living Room
   entities:
     - light.living_room
     - light.living_room_hue
+    - switch.livingroom_outlet_1
     - media_player.living_room_tv
     - media_player.samsung_tv_remote
+    - switch.livingroom_tv_led_on_off
+    - switch.livingroom_tv_led_demo
+    - switch.livingroom_tv_led_white
     - input_select.manything_status
 office:
   name: Office

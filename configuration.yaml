@@ -53,15 +53,14 @@ media_player:
   - platform: cast
     host: !secret chromecast_ip
 
-# MQTT
-# Cloudmqtt set up 
+# Mosquitto set up running on HA Pi
 mqtt:
-  broker: !secret mqtt_broker
-  port: !secret mqtt_port
   client_id: home-assistant-1
-  keepalive: 60
-  username: !secret mqtt_username
-  password: !secret mqtt_password
+  protocol: 3.1
+  broker: !secret mqtt_broker_mosquitto
+  port: !secret mqtt_port_mosquitto
+  username: !secret mqtt_username_mosquitto
+  password: !secret mqtt_password_mosquitto
 
 # Trackers
 # Georgi 6P tracker with Owntracks and cloudmqtt
@@ -103,9 +102,6 @@ group: !include groups.yaml
 
 # Input select
 input_select: !include input_select.yaml
-
-# Input boolean
-# input_boolean: !include input_boolean.yaml
 
 # Weather Prediction
 sensor: !include sensors.yaml

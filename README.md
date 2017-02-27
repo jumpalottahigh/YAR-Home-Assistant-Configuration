@@ -12,6 +12,8 @@ The YAnev Residence (YAR) configuration for Home Assistant is a work in progress
 - Turn on Main PC (WOL)
 - Turn on manything cameras on/off remotely and tune in
 - Send TTS to living room TV
+- Turn on/off living room and office lights
+- Turn on/off Chromecast
 - ...
 
 ## Device / Sensor list:

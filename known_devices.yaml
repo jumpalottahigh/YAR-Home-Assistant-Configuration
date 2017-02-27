@@ -1,4 +1,4 @@
-sofi_ip_sofi_ip:
+sofiip_sp:
   hide_if_away: false
   mac: !secret sofi_iphone_mac
   name: Sofi
@@ -6,7 +6,7 @@ sofi_ip_sofi_ip:
   track: true
   vendor:
 
-georgi_6p_georgi_6p:
+georgi6p_gp:
   hide_if_away: false
   mac: !secret georgi_nexus6p_mac
   name: Georgi
@@ -14,10 +14,10 @@ georgi_6p_georgi_6p:
   track: true
   vendor:
 
-phone_phone:
+username_gp:
   hide_if_away: false
   mac:
-  name: phone
+  name: username
   picture:
   track: true
   vendor:

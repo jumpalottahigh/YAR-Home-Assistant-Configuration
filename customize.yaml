@@ -1,17 +1,3 @@
-# Example how to provide custom local image
-#light.living_room:
-#  entity_picture: /local/philips-hue.png
-
-# Remove duplicate room / lights until we get more lights per room
-light.living_room_hue:
-  hidden: True
-light.office_hue:
-  hidden: True
-
-# Device tracker
-device_tracker.phone_phone:
-  hidden: True
-
 # Customize media players
 media_player.living_room_tv:
   friendly_name: Chromecast
@@ -44,3 +30,23 @@ sun.sun:
 # Switch customizations
 switch.main_computer:
   icon: mdi:laptop
+
+switch.livingroom_tv_led_on_off:
+  friendly_name: TV backlight
+  icon: mdi:lightbulb
+
+switch.livingroom_tv_led_demo:
+  friendly_name: TV backlight demo
+  icon: mdi:lightbulb
+
+switch.livingroom_tv_led_white:
+  friendly_name: TV backlight white
+  icon: mdi:lightbulb
+
+switch.livingroom_outlet_1:
+  friendly_name: Window lights
+  icon: mdi:lightbulb
+
+switch.kitchen_outlet_2:
+  friendly_name: Kitchen outlet 2
+  icon: mdi:coffee
