@@ -2,10 +2,27 @@
 - alias: Make morning coffee
   trigger:
     - platform: time
-      after: "07:00"    
+      after: "07:00"
+  condition:
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
   action:
     - service: switch.turn_on
       entity_id: switch.kitchen_outlet_2
     - delay: 00:05:00
     - service: switch.turn_off
       entity_id: switch.kitchen_outlet_2
+
+# Turn on window lights at 8:00
+- alias: Turn on window lights at 8:00
+  trigger:
+    - platform: time
+      after: "08:00"    
+  action:
+    - service: switch.turn_on
+      entity_id: switch.livingroom_outlet_1

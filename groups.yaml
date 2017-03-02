@@ -66,5 +66,6 @@ office:
   entities:
     - light.office
     - light.office_hue
+    - light.office_side_lamp
     - switch.main_computer
     - camera.office

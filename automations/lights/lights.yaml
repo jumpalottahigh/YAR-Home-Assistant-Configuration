@@ -19,8 +19,32 @@
   trigger:
     - platform: time
       after: "23:45"
+  condition:
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - sun
   action:
     - service: homeassistant.turn_off
       entity_id: group.all_lights
     - service: homeassistant.turn_off
       entity_id: switch.livingroom_outlet_1
+
+# Dim lights at 20:00 for night mode
+- alias: "Dim lights to night mode"
+  trigger:
+    - platform: time
+      after: "20:00"
+  action:
+    - service: light.turn_on
+      data:
+        entity_id:
+          - light.office_side_lamp
+          - light.office_hue
+          - light.living_room_hue
+        brightness: 100
+        color_temp: 350
+        transition: 2

@@ -48,5 +48,5 @@ switch.livingroom_outlet_1:
   icon: mdi:lightbulb
 
 switch.kitchen_outlet_2:
-  friendly_name: Kitchen outlet 2
+  friendly_name: Coffee pot
   icon: mdi:coffee
