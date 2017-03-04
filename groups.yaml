@@ -49,6 +49,7 @@ kitchen:
   name: Kitchen
   entities:
     - switch.kitchen_outlet_2
+    - binary_sensor.flic_80e4da732d5c
 living_room:
   name: Living Room
   entities:

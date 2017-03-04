@@ -111,3 +111,6 @@ switch: !include switches.yaml
 
 # Lights (non Hue)
 light: !include lights.yaml
+
+# Binary sensors
+binary_sensor: !include binary_sensors.yaml

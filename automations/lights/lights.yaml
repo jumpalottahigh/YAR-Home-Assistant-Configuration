@@ -46,5 +46,5 @@
           - light.office_hue
           - light.living_room_hue
         brightness: 100
-        color_temp: 350
+        color_temp: 410
         transition: 2

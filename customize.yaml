@@ -50,3 +50,8 @@ switch.livingroom_outlet_1:
 switch.kitchen_outlet_2:
   friendly_name: Coffee pot
   icon: mdi:coffee
+
+# Binary sensors customizations
+binary_sensor.flic_80e4da732d5c:
+  friendly_name: Flic Button
+  icon: mdi:album
