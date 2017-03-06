@@ -51,7 +51,6 @@ switch.kitchen_outlet_2:
   friendly_name: Coffee pot
   icon: mdi:coffee
 
-# Binary sensors customizations
-binary_sensor.flic_80e4da732d5c:
-  friendly_name: Flic Button
-  icon: mdi:album
+# Hide HA device tracker
+device_tracker.username_gp:
+  hidden: true

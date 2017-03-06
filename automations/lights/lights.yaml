@@ -48,3 +48,16 @@
         brightness: 100
         color_temp: 410
         transition: 2
+
+# Turn office side lamp red when Georgi comes home
+- alias: "Turn office side lamp green when Georgi comes home"
+  trigger:
+    - platform: state
+      entity_id: device_tracker.georgi6p_gp
+      state: 'home'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id:
+          - light.office_side_lamp
+        rgb_color: [10, 225, 10]

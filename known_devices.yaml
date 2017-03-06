@@ -17,7 +17,7 @@ georgi6p_gp:
 username_gp:
   hide_if_away: false
   mac:
-  name: username
+  name: HA
   picture:
   track: true
   vendor:

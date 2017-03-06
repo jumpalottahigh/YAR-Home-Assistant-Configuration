@@ -12,23 +12,28 @@
       pulselength: 392
       code_on: 13511425
       code_off: 13511425
+      signal_repetitions: 15
     livingroom_tv_led_demo:
       protocol: 1
       pulselength: 392
       code_on: 13511432
       code_off: 13511432
+      signal_repetitions: 15
     livingroom_tv_led_white:
       protocol: 1
       pulselength: 392
       code_on: 13511438
       code_off: 13511438
+      signal_repetitions: 15
     livingroom_outlet_1:
       protocol: 1
       pulselength: 177
       code_on: 10618124
       code_off: 10618116
+      signal_repetitions: 15
     kitchen_outlet_2:
       protocol: 1
       pulselength: 177
       code_on: 10618122
       code_off: 10618114
+      signal_repetitions: 15
