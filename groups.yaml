@@ -71,6 +71,9 @@ office:
     - light.office
     - light.office_hue
     - switch.main_computer
+    - camera.office
+    - switch.office_frontfacing_camera
+    - switch.office_torch
 kids_room:
   name: Kids Room
   entities:

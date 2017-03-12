@@ -112,3 +112,12 @@ switch: !include switches.yaml
 
 # Lights (non Hue)
 light: !include lights.yaml
+
+# Add ipwebcam component for testing purposes
+android_ip_webcam:
+  - host: !secret camera_office_ip
+    name: Office
+    auto_discovery: False
+    switches:
+      - ffc
+      - torch
