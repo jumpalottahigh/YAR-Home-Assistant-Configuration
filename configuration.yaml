@@ -44,7 +44,8 @@ sun:
 
 # Text to speech
 tts:
-  platform: google
+  - platform: google
+    language: 'en-us'
 
 # Media devices
 media_player:

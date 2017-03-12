@@ -15,6 +15,11 @@ office_view:
   name: Office
   entities:
     - group.office
+kids_room_view:
+  view: yes
+  name: Kids room
+  entities:
+    - group.kids_room
 family_view:
   view: yes
   name: Family
@@ -60,12 +65,14 @@ living_room:
     - switch.livingroom_tv_led_on_off
     - switch.livingroom_tv_led_demo
     - switch.livingroom_tv_led_white
-    - input_select.manything_status
 office:
   name: Office
   entities:
     - light.office
     - light.office_hue
-    - light.office_side_lamp
     - switch.main_computer
-    - camera.office
+kids_room:
+  name: Kids Room
+  entities:
+    - light.kids_room
+    - camera.kids_room

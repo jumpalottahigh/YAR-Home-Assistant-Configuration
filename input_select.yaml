@@ -19,13 +19,3 @@ sofi_status:
     - sleeping
   initial: standby
   icon: mdi:human-female
-
-# Manythings selector
-manything_status:
-  name: Manything...
-  icon: mdi:camera-front-variant
-  options:
-    - idle
-    - turn_on
-    - turn_off
-  initial: idle  

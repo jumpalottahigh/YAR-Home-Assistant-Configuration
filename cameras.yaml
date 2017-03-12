@@ -5,9 +5,9 @@
   limit_refetch_to_url_change: true
 
 - platform: mjpeg
-  name: Office
-  mjpeg_url: !secret camera_office_ip_credentials
+  name: Kids room
+  mjpeg_url: !secret camera_kids_room_ip_credentials
   # Slower image stream
   # mjpeg_url: http://192.168.10.46:81/snapshot.cgi
-  # username: !secret camera_office_username
-  # password: !secret camera_office_password
+  # username: !secret camera_kids_room_username
+  # password: !secret camera_kids_room_password

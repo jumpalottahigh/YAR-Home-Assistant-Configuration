@@ -1,12 +1,18 @@
 # Turn on lights at sunset
-- alias: "Lights on at sunset"
+- alias: "Lights on 45 min before sunset"
   trigger:
     platform: sun
     event: sunset
     offset: "-00:45:00"
   action:
-    - service: homeassistant.turn_on
-      entity_id: group.all_lights
+    - service: light.turn_on
+      data:
+        entity_id:
+          - light.kids_room
+          - light.office_hue
+          - light.living_room_hue
+        brightness: 225
+        color_temp: 150
     - service: homeassistant.turn_on
       entity_id: switch.livingroom_outlet_1
     - service: tts.google_say
@@ -15,7 +21,7 @@
         message: "The sun will set in 45 minutes. Turning on all lights."
 
 # Turn off lights at 23:45
-- alias: "Lights off at 23:45"
+- alias: "Lights off at 23:45 (sun-thu)"
   trigger:
     - platform: time
       after: "23:45"
@@ -34,7 +40,7 @@
       entity_id: switch.livingroom_outlet_1
 
 # Dim lights at 20:00 for night mode
-- alias: "Dim lights to night mode"
+- alias: "Dim lights to night mode at 20:00"
   trigger:
     - platform: time
       after: "20:00"
@@ -42,22 +48,31 @@
     - service: light.turn_on
       data:
         entity_id:
-          - light.office_side_lamp
+          - light.kids_room
           - light.office_hue
           - light.living_room_hue
         brightness: 100
         color_temp: 410
         transition: 2
 
-# Turn office side lamp red when Georgi comes home
-- alias: "Turn office side lamp green when Georgi comes home"
+# Turn off kids room lights at 21:00
+- alias: "Kids room lights off at 21:00"
   trigger:
-    - platform: state
-      entity_id: device_tracker.georgi6p_gp
-      state: 'home'
+    - platform: time
+      after: "21:00"
   action:
-    - service: light.turn_on
-      data:
-        entity_id:
-          - light.office_side_lamp
-        rgb_color: [10, 225, 10]
+    - service: light.turn_off
+      entity_id: light.kids_room
+
+# Turn office side lamp red when Georgi comes home
+# - alias: "Turn office side lamp green when Georgi comes home"
+#   trigger:
+#     - platform: state
+#       entity_id: device_tracker.georgi6p_gp
+#       state: 'home'
+#   action:
+#     - service: light.turn_on
+#       data:
+#         entity_id:
+#           - light.office_side_lamp
+#         rgb_color: [10, 225, 10]
