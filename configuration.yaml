@@ -121,3 +121,6 @@ android_ip_webcam:
     switches:
       - ffc
       - torch
+  - host: !secret camera_office_2_ip
+    name: Office 2
+    auto_discovery: False

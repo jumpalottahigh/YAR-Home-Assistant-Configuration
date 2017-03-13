@@ -74,6 +74,7 @@ office:
     - camera.office
     - switch.office_frontfacing_camera
     - switch.office_torch
+    - camera.office_2
 kids_room:
   name: Kids Room
   entities:
