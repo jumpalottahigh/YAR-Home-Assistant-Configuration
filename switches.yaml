@@ -7,33 +7,128 @@
 - platform: rpi_rf
   gpio: 17
   switches:
-    livingroom_tv_led_on_off:
-      protocol: 1
-      pulselength: 392
-      code_on: 13511425
-      code_off: 13511425
-      signal_repetitions: 20
-    livingroom_tv_led_demo:
-      protocol: 1
-      pulselength: 392
-      code_on: 13511432
-      code_off: 13511432
-      signal_repetitions: 20
-    livingroom_tv_led_white:
-      protocol: 1
-      pulselength: 392
-      code_on: 13511438
-      code_off: 13511438
-      signal_repetitions: 20
+    # RF 433 Outlets
     livingroom_outlet_1:
       protocol: 1
       pulselength: 177
-      code_on: 10618124
-      code_off: 10618116
-      signal_repetitions: 20
+      code_on: 108 #10618124
+      code_off: 100 #10618116
+      signal_repetitions: 25
     kitchen_outlet_2:
       protocol: 1
       pulselength: 177
-      code_on: 10618122
-      code_off: 10618114
-      signal_repetitions: 20
+      code_on: 200 #10618122
+      code_off: 208 #10618114
+      signal_repetitions: 25
+    # RF 433 TV backlight
+    livingroom_tv_led:
+      protocol: 1
+      pulselength: 396
+      code_on: 13511425
+      code_off: 13511425
+      signal_repetitions: 25
+    livingroom_tv_led_mode_plus:
+      protocol: 1
+      pulselength: 396
+      code_on: 13511429
+      code_off: 13511429
+      signal_repetitions: 25
+    livingroom_tv_led_mode_minus:
+      protocol: 1
+      pulselength: 396
+      code_on: 13511435
+      code_off: 13511435
+      signal_repetitions: 25
+    livingroom_tv_led_speed_plus:
+      protocol: 1
+      pulselength: 396
+      code_on: 13511433
+      code_off: 13511433
+      signal_repetitions: 25
+    livingroom_tv_led_speed_minus:
+      protocol: 1
+      pulselength: 396
+      code_on: 13511431
+      code_off: 13511431
+      signal_repetitions: 25
+    livingroom_tv_led_demo:
+      protocol: 1
+      pulselength: 396
+      code_on: 13511432
+      code_off: 13511432
+      signal_repetitions: 25
+    livingroom_tv_led_color_plus:
+      protocol: 1
+      pulselength: 396
+      code_on: 13511434
+      code_off: 13511434
+      signal_repetitions: 25
+    livingroom_tv_led_color_minus:
+      protocol: 1
+      pulselength: 396
+      code_on: 13511437
+      code_off: 13511437
+      signal_repetitions: 25
+    livingroom_tv_led_brightness_plus:
+      protocol: 1
+      pulselength: 396
+      code_on: 13511436
+      code_off: 13511436
+      signal_repetitions: 25
+    livingroom_tv_led_brightness_minus:
+      protocol: 1
+      pulselength: 396
+      code_on: 13511439
+      code_off: 13511439
+      signal_repetitions: 25
+    livingroom_tv_led_white:
+      protocol: 1
+      pulselength: 396
+      code_on: 13511438
+      code_off: 13511438
+      signal_repetitions: 25
+    livingroom_tv_led_red:
+      protocol: 1
+      pulselength: 396
+      code_on: 13511440
+      code_off: 13511440
+      signal_repetitions: 25
+    livingroom_tv_led_green:
+      protocol: 1
+      pulselength: 396
+      code_on: 13511441
+      code_off: 13511441
+      signal_repetitions: 25
+    livingroom_tv_led_blue:
+      protocol: 1
+      pulselength: 396
+      code_on: 13511442
+      code_off: 13511442
+      signal_repetitions: 25
+    livingroom_tv_led_yellow:
+      protocol: 1
+      pulselength: 396
+      code_on: 13511443
+      code_off: 13511443
+      signal_repetitions: 25
+    livingroom_tv_led_teal:
+      protocol: 1
+      pulselength: 396
+      code_on: 13511444
+      code_off: 13511444
+      signal_repetitions: 25
+    livingroom_tv_led_purple:
+      protocol: 1
+      pulselength: 396
+      code_on: 13511445
+      code_off: 13511445
+      signal_repetitions: 25
+
+# 433 RF codes rule set
+# First digit = room
+# 1 - Living room
+# 2 - Kitchen
+# ...
+# Second and third digit on and off with a difference of 1 byte starting with the off code
+#00 - 08
+#09 - 17

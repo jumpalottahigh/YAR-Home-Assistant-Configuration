@@ -31,16 +31,72 @@ sun.sun:
 switch.main_computer:
   icon: mdi:laptop
 
-switch.livingroom_tv_led_on_off:
+switch.livingroom_tv_led:
   friendly_name: TV backlight
   icon: mdi:lightbulb
 
+switch.livingroom_tv_led_mode_plus:
+  friendly_name: TV LED MODE PLUS
+  icon: mdi:lightbulb
+
+switch.livingroom_tv_led_mode_minus:
+  friendly_name: TV LED MODE MINUS
+  icon: mdi:lightbulb
+
+switch.livingroom_tv_led_speed_plus:
+  friendly_name: TV LED SPEED PLUS
+  icon: mdi:lightbulb
+
+switch.livingroom_tv_led_speed_minus:
+  friendly_name: TV LED SPEED MINUS
+  icon: mdi:lightbulb
+
 switch.livingroom_tv_led_demo:
-  friendly_name: TV backlight demo
+  friendly_name: TV LED DEMO
+  icon: mdi:lightbulb
+
+switch.livingroom_tv_led_color_plus:
+  friendly_name: TV LED COLOR PLUS
+  icon: mdi:lightbulb
+
+switch.livingroom_tv_led_color_minus:
+  friendly_name: TV LED COLOR MINUS
+  icon: mdi:lightbulb
+
+switch.livingroom_tv_led_brightness_plus:
+  friendly_name: TV LED BRIGHTNESS PLUS
+  icon: mdi:lightbulb
+
+switch.livingroom_tv_led_brightness_minus:
+  friendly_name: TV LED BRIGHTNESS MINUS
   icon: mdi:lightbulb
 
 switch.livingroom_tv_led_white:
   friendly_name: TV backlight white
+  icon: mdi:lightbulb
+
+switch.livingroom_tv_led_red:
+  friendly_name: TV backlight red
+  icon: mdi:lightbulb
+
+switch.livingroom_tv_led_green:
+  friendly_name: TV backlight green
+  icon: mdi:lightbulb
+
+switch.livingroom_tv_led_blue:
+  friendly_name: TV backlight blue
+  icon: mdi:lightbulb
+
+switch.livingroom_tv_led_yellow:
+  friendly_name: TV backlight yellow
+  icon: mdi:lightbulb
+
+switch.livingroom_tv_led_teal:
+  friendly_name: TV backlight teal
+  icon: mdi:lightbulb
+
+switch.livingroom_tv_led_purple:
+  friendly_name: TV backlight purple
   icon: mdi:lightbulb
 
 switch.livingroom_outlet_1:

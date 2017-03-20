@@ -1,7 +1,7 @@
 # Anton's room lamp
 - platform: yeelight
   devices:
-    192.168.10.48:
+    192.168.10.49:
       name: Kids Room
       transition: 1000
       use_music_mode: True

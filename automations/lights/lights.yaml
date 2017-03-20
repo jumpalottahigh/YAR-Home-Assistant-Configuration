@@ -1,9 +1,9 @@
 # Turn on lights at sunset
-- alias: "Lights on 45 min before sunset"
+- alias: "Lights on 2 hrs before sunset"
   trigger:
     platform: sun
     event: sunset
-    offset: "-00:45:00"
+    offset: "-02:00:00"
   action:
     - service: light.turn_on
       data:
@@ -18,7 +18,7 @@
     - service: tts.google_say
       entity_id: media_player.living_room_tv
       data:
-        message: "The sun will set in 45 minutes. Turning on all lights."
+        message: "The sun will set in 2 hours. Turning on all lights."
 
 # Turn off lights at 23:45
 - alias: "Lights off at 23:45 (sun-thu)"
@@ -64,15 +64,15 @@
     - service: light.turn_off
       entity_id: light.kids_room
 
-# Turn office side lamp red when Georgi comes home
-# - alias: "Turn office side lamp green when Georgi comes home"
-#   trigger:
-#     - platform: state
-#       entity_id: device_tracker.georgi6p_gp
-#       state: 'home'
-#   action:
-#     - service: light.turn_on
-#       data:
-#         entity_id:
-#           - light.office_side_lamp
-#         rgb_color: [10, 225, 10]
+# Turn on Main PC when Georgi comes home
+- alias: "Turn on main PC when Georgi comes home"
+  trigger:
+    - platform: state
+      entity_id: device_tracker.georgi6p_gp
+      state: 'home'
+  condition:
+    - condition: time
+      after: '16:00:00'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.main_computer

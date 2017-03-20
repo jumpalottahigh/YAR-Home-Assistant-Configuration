@@ -62,9 +62,23 @@ living_room:
     - switch.livingroom_outlet_1
     - media_player.living_room_tv
     - media_player.samsung_tv_remote
-    - switch.livingroom_tv_led_on_off
+    - switch.livingroom_tv_led
+    - switch.livingroom_tv_led_mode_plus
+    - switch.livingroom_tv_led_mode_minus
+    - switch.livingroom_tv_led_speed_plus
+    - switch.livingroom_tv_led_speed_minus
     - switch.livingroom_tv_led_demo
+    - switch.livingroom_tv_led_color_plus
+    - switch.livingroom_tv_led_color_minus
+    - switch.livingroom_tv_led_brightness_plus
+    - switch.livingroom_tv_led_brightness_minus
     - switch.livingroom_tv_led_white
+    - switch.livingroom_tv_led_red
+    - switch.livingroom_tv_led_green
+    - switch.livingroom_tv_led_blue
+    - switch.livingroom_tv_led_yellow
+    - switch.livingroom_tv_led_teal
+    - switch.livingroom_tv_led_purple
 office:
   name: Office
   entities:
