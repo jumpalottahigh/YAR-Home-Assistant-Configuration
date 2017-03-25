@@ -42,6 +42,9 @@ logbook:
 # Track the sun
 sun:
 
+# Config panel enabler
+config:
+
 # Text to speech
 tts:
   - platform: google
