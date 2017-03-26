@@ -110,3 +110,13 @@ switch.kitchen_outlet_2:
 # Hide HA device tracker
 device_tracker.username_gp:
   hidden: true
+
+# Hide useless android camera sensors
+sensor.office_2_audio_connections:
+  hidden: true
+sensor.office_2_video_connections:
+  hidden: true
+sensor.office_audio_connections:
+  hidden: true
+sensor.office_video_connections:
+  hidden: true

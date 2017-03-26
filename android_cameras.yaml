@@ -1,0 +1,7 @@
+- host: !secret camera_office_ip
+  name: Office
+  switches:
+    - ffc
+    - torch
+- host: !secret camera_office_2_ip
+  name: Office 2

@@ -12,7 +12,8 @@
           - light.office_hue
           - light.living_room_hue
         brightness: 225
-        color_temp: 150
+        color_temp: 327
+        rgb_color: [255, 68, 0]
         transition: 2
     - service: switch.turn_on
       entity_id: switch.livingroom_outlet_1
@@ -54,6 +55,7 @@
           - light.living_room_hue
         brightness: 100
         color_temp: 410
+        rgb_color: [255, 68, 0]
         transition: 2
 
 # Turn off kids room lights at 21:00
