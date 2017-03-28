@@ -99,13 +99,20 @@ switch.livingroom_tv_led_purple:
   friendly_name: TV backlight purple
   icon: mdi:lightbulb
 
-switch.livingroom_outlet_1:
+switch.livingroom_window_lights:
   friendly_name: Window lights
   icon: mdi:lightbulb
 
-switch.kitchen_outlet_2:
+switch.livingroom_ball_lights:
+  friendly_name: Ball lights
+  icon: mdi:lightbulb
+
+switch.kitchen_coffee_pot:
   friendly_name: Coffee pot
   icon: mdi:coffee
+
+switch.kitchen_outlet_2:
+  friendly_name: Outlet 2
 
 # Hide HA device tracker
 device_tracker.username_gp:

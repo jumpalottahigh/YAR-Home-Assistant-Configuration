@@ -8,17 +8,29 @@
   gpio: 17
   switches:
     # RF 433 Outlets
-    livingroom_outlet_1:
+    livingroom_window_lights:
       protocol: 1
       pulselength: 177
       code_on: 108 #10618124
       code_off: 100 #10618116
       signal_repetitions: 25
-    kitchen_outlet_2:
+    livingroom_ball_lights:
+      protocol: 1
+      pulselength: 177
+      code_on: 109 #10618124
+      code_off: 117 #10618116
+      signal_repetitions: 25
+    kitchen_coffee_pot:
       protocol: 1
       pulselength: 177
       code_on: 200 #10618122
       code_off: 208 #10618114
+      signal_repetitions: 25
+    kitchen_outlet_2:
+      protocol: 1
+      pulselength: 177
+      code_on: 217 #10618122
+      code_off: 209 #10618114
       signal_repetitions: 25
     # RF 433 TV backlight
     livingroom_tv_led:
