@@ -54,6 +54,9 @@ tts:
 media_player:
   - platform: samsungtv
     host: !secret samsung_tv_ip
+    mac: !secret samsung_tv_mac
+    name: Livingroom TV
+    port: 8001
   - platform: cast
     host: !secret chromecast_ip
 

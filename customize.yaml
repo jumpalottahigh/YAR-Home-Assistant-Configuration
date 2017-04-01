@@ -111,8 +111,8 @@ switch.kitchen_coffee_pot:
   friendly_name: Coffee pot
   icon: mdi:coffee
 
-switch.kitchen_outlet_2:
-  friendly_name: Outlet 2
+switch.livingroom_charger:
+  friendly_name: iPhone Charger
 
 # Hide HA device tracker
 device_tracker.username_gp:

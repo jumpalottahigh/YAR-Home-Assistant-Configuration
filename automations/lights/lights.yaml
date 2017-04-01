@@ -49,6 +49,8 @@
       entity_id: switch.livingroom_window_lights
     - service: homeassistant.turn_off
       entity_id: switch.livingroom_ball_lights
+    - service: homeassistant.turn_off
+      entity_id: switch.livingroom_charger
 
 # Dim lights at 20:00 for night mode
 - alias: "Dim lights to night mode at 20:00"

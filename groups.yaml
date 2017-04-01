@@ -54,7 +54,6 @@ kitchen:
   name: Kitchen
   entities:
     - switch.kitchen_coffee_pot
-    - switch.kitchen_outlet_2
 living_room:
   name: Living Room
   entities:
@@ -62,6 +61,7 @@ living_room:
     - light.living_room_hue
     - switch.livingroom_window_lights
     - switch.livingroom_ball_lights
+    - switch.livingroom_charger
     - media_player.living_room_tv
     - media_player.samsung_tv_remote
     - switch.livingroom_tv_led
