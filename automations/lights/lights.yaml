@@ -24,10 +24,10 @@
         brightness: 225
         rgb_color: [255, 68, 0]
         transition: 2
-    # - service: tts.google_say
-    #   entity_id: media_player.living_room_tv
-    #   data:
-    #     message: "The sun will set in 55 mins. Turning on all lights."
+    - service: tts.google_say
+      entity_id: media_player.living_room_home
+      data:
+        message: "The sun will set in 1 and a half hours. Turning on all lights."
 
 # Turn off lights at 23:45
 - alias: "Lights off at 23:45 (sun-thu)"
@@ -73,6 +73,10 @@
         brightness: 100
         rgb_color: [255, 68, 0]
         transition: 2
+    - service: tts.google_say
+      entity_id: media_player.living_room_home
+      data:
+        message: "It is now 8pm. Settings lights to night mode."
 
 # Turn off kids room lights at 21:00
 - alias: "Kids room lights off at 21:00"
@@ -95,3 +99,7 @@
   action:
     - service: switch.turn_on
       entity_id: switch.main_computer
+    - service: tts.google_say
+      entity_id: media_player.living_room_home
+      data:
+        message: "Georgi has arrived home."

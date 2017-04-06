@@ -18,6 +18,12 @@ homeassistant:
 # Enables the frontend
 frontend:
 
+# Add Alexa integration
+emulated_hue:
+  # Google Home set up
+  type: google_home
+  listen_port: 80
+
 http:
   # Uncomment this to add a password (recommended!)
   api_password: !secret ha_api_password

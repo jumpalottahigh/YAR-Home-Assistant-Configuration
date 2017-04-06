@@ -64,6 +64,9 @@ living_room:
     - switch.livingroom_charger
     - media_player.living_room_tv
     - media_player.samsung_tv_remote
+    - media_player.living_room_home
+    - media_player.living_room_tv_2
+    - media_player.livingroom_tv
     - switch.livingroom_tv_led
     - switch.livingroom_tv_led_mode_plus
     - switch.livingroom_tv_led_mode_minus
