@@ -127,3 +127,10 @@ switch: !include switches.yaml
 
 # Lights (non Hue)
 light: !include lights.yaml
+
+# Testing. If this makes the final cut will be exported to its own file
+binary_sensor:
+  platform: mqtt
+  state_topic: 'home/livingroom/stairs/motion'
+  name: 'Motion stairs'
+  device_class: motion

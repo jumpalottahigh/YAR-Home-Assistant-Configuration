@@ -1,9 +1,9 @@
 # Turn on lights at sunset
-- alias: "Lights on 1.5 hours before sunset"
+- alias: "Lights on 1 hour before sunset"
   trigger:
     platform: sun
     event: sunset
-    offset: "-01:30:00"
+    offset: "-01:00:00"
   action:
     - service: homeassistant.turn_on
       data:
@@ -21,13 +21,15 @@
       data:
         entity_id:
           - light.kids_room
+          - light.kitchen
         brightness: 225
-        rgb_color: [255, 68, 0]
+        color_temp: 240
+        rgb_color: [255, 250, 202]
         transition: 2
     - service: tts.google_say
       entity_id: media_player.living_room_home
       data:
-        message: "The sun will set in 1 and a half hours. Turning on all lights."
+        message: "The sun will set in 1 hour. Turning on all lights."
 
 # Turn off lights at 23:45
 - alias: "Lights off at 23:45 (sun-thu)"
@@ -70,13 +72,15 @@
       data:
         entity_id:
           - light.kids_room
-        brightness: 100
-        rgb_color: [255, 68, 0]
+          - light.kitchen
+        brightness: 144
+        color_temp: 340
+        rgb_color: [255, 250, 202]
         transition: 2
     - service: tts.google_say
       entity_id: media_player.living_room_home
       data:
-        message: "It is now 8pm. Settings lights to night mode."
+        message: "It is now 8pm. Setting the house to night mode."
 
 # Turn off kids room lights at 21:00
 - alias: "Kids room lights off at 21:00"
@@ -88,18 +92,65 @@
       entity_id: light.kids_room
 
 # Turn on Main PC when Georgi comes home
-- alias: "Turn on main PC when Georgi comes home"
-  trigger:
-    - platform: state
-      entity_id: device_tracker.georgi6p_gp
-      state: 'home'
-  condition:
-    - condition: time
-      after: '16:00:00'
-  action:
-    - service: switch.turn_on
-      entity_id: switch.main_computer
-    - service: tts.google_say
-      entity_id: media_player.living_room_home
-      data:
-        message: "Georgi has arrived home."
+# - alias: "Turn on main PC when Georgi comes home"
+#   trigger:
+#     - platform: state
+#       entity_id: device_tracker.georgi6p_gp
+#       state: 'home'
+#   condition:
+#     - condition: time
+#       after: '16:00:00'
+#   action:
+#     - service: switch.turn_on
+#       entity_id: switch.main_computer
+    # - service: tts.google_say
+    #   entity_id: media_player.living_room_home
+    #   data:
+    #     message: "Georgi has arrived home."
+
+# Turn on Main PC on motion detected
+# - alias: "Turn on main PC on motion detected"
+#   trigger:
+#     - platform: state
+#       entity_id: binary_sensor.motion_stairs
+#       from: 'off'
+#       to: 'on'
+#       state: 'on'
+#   condition:
+#     - condition: time
+#       after: '16:00:00'
+#   action:
+#     - service: switch.turn_on
+#       entity_id: switch.main_computer
+
+# Turn off TV backlight when walking on the stairs
+# - alias: "Turn off TV backlight when walking on the stairs"
+#   trigger:
+#     - platform: state
+#       entity_id: binary_sensor.motion_stairs
+#       from: 'off'
+#       to: 'on'
+#       state: 'on'
+#   action:
+#     - service: switch.turn_off
+#       entity_id: switch.livingroom_tv_led
+    # - service: tts.google_say
+    #   entity_id: media_player.living_room_home
+    #   data:
+    #     message: "Stairwell motion detected. Turning off TV backlight."
+
+# Turn on TV backlight when motion is no longer detected on the stairs
+# - alias: "Turn on TV backlight when motion is no longer detected on the stairs"
+#   trigger:
+#     - platform: state
+#       entity_id: binary_sensor.motion_stairs
+#       from: 'on'
+#       to: 'off'
+#       state: 'off'
+#   action:
+#     - service: switch.turn_on
+#       entity_id: switch.livingroom_tv_led
+    # - service: tts.google_say
+    #   entity_id: media_player.living_room_home
+    #   data:
+    #     message: "Motion no longer detected. Turning on TV backlight."

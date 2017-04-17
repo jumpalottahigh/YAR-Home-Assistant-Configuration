@@ -53,6 +53,7 @@ family:
 kitchen:
   name: Kitchen
   entities:
+    - light.kitchen
     - switch.kitchen_coffee_pot
 living_room:
   name: Living Room
@@ -90,6 +91,8 @@ office:
     - light.office
     - light.office_hue
     - switch.main_computer
+    - sensor.office_brightness_sensor
+    - binary_sensor.motion_stairs
     - camera.office
     - switch.office_frontfacing_camera
     - switch.office_torch
