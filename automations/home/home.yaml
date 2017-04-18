@@ -1,0 +1,23 @@
+# Daily fun announcement
+- alias: "Announce a daily fun diaper change"
+  trigger:
+    - platform: time
+      after: "18:00"
+  action:
+    - service: tts.google_say
+      entity_id: media_player.living_room_home
+      data:
+        message: "Hm. Maybe I will. Maybe I won't. Or maybe I will, eat a little bit of chicken leggie. Chicken leggie! Diaper change!"
+
+- alias: "Hello Mr. President!"
+  trigger:
+    platform: zone
+    entity_id: device_tracker.georgi6p_gp
+    zone: zone.mr_president
+    # Event is either enter or leave
+    event: enter  # or "leave"
+  action:
+    - service: tts.google_say
+      entity_id: media_player.living_room_home
+      data:
+        message: "Hello there, Mr. President!"
