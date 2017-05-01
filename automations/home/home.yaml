@@ -7,7 +7,7 @@
     - service: tts.google_say
       entity_id: media_player.living_room_home
       data:
-        message: "Hm. Maybe I will. Maybe I won't. Or maybe I will, eat a little bit of chicken leggie. Chicken leggie! Diaper change!"
+        message: "Hm. Maybe I will. Maybe I won't. Or maybe I will... eat... a little bit of... chicken leggie. Chicken leggie! Diaper change!"
 
 - alias: "Hello Mr. President!"
   trigger:
@@ -16,8 +16,36 @@
     zone: zone.mr_president
     # Event is either enter or leave
     event: enter  # or "leave"
+  condition:
+  - condition: time
+    after: "16:00:00"
   action:
     - service: tts.google_say
       entity_id: media_player.living_room_home
       data:
         message: "Hello there, Mr. President!"
+
+# Turn on Main PC when Georgi comes home
+- alias: "Turn on main PC when Georgi comes home"
+  trigger:
+    platform: zone
+    entity_id: device_tracker.georgi6p_gp
+    zone: zone.home
+    event: enter
+  condition:
+    - condition: time
+      after: "16:00:00"
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+  action:
+    - service: switch.turn_on
+      entity_id: switch.main_computer
+    - service: tts.google_say
+      entity_id: media_player.living_room_home
+      data:
+        message: "Georgi has arrived home."

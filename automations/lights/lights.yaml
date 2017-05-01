@@ -1,9 +1,9 @@
 # Turn on lights at sunset
-- alias: "Lights on 1 hour before sunset"
+- alias: "Lights on 2 hours before sunset"
   trigger:
     platform: sun
     event: sunset
-    offset: "-01:00:00"
+    offset: "-02:00:00"
   action:
     - service: homeassistant.turn_on
       data:
@@ -29,7 +29,7 @@
     - service: tts.google_say
       entity_id: media_player.living_room_home
       data:
-        message: "The sun will set in 1 hour. Turning on all lights."
+        message: "Sunset in 2 hours. Turning on all lights."
 
 # Turn off lights at 23:45
 - alias: "Lights off at 23:45 (sun-thu)"
@@ -91,37 +91,26 @@
     - service: light.turn_off
       entity_id: light.kids_room
 
-# Turn on Main PC when Georgi comes home
-# - alias: "Turn on main PC when Georgi comes home"
-#   trigger:
-#     - platform: state
-#       entity_id: device_tracker.georgi6p_gp
-#       state: 'home'
-#   condition:
-#     - condition: time
-#       after: '16:00:00'
-#   action:
-#     - service: switch.turn_on
-#       entity_id: switch.main_computer
-    # - service: tts.google_say
-    #   entity_id: media_player.living_room_home
-    #   data:
-    #     message: "Georgi has arrived home."
-
-# Turn on Main PC on motion detected
-# - alias: "Turn on main PC on motion detected"
-#   trigger:
-#     - platform: state
-#       entity_id: binary_sensor.motion_stairs
-#       from: 'off'
-#       to: 'on'
-#       state: 'on'
-#   condition:
-#     - condition: time
-#       after: '16:00:00'
-#   action:
-#     - service: switch.turn_on
-#       entity_id: switch.main_computer
+# Turn on office light based on room light conditions
+- alias: "Turn on office light based on room light conditions"
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.office_brightness
+    below: 50
+  condition:
+    - condition: state
+      entity_id: light.office_hue
+      state: "off"
+    - condition: time
+      after: "07:00"
+  action:
+    - service: homeassistant.turn_on
+      data:
+        entity_id:
+          - light.office_hue
+        brightness: 225
+        color_temp: 327
+        transition: 2
 
 # Turn off TV backlight when walking on the stairs
 # - alias: "Turn off TV backlight when walking on the stairs"

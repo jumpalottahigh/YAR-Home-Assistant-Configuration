@@ -20,8 +20,14 @@
 
 # Light amount sensor office
 - platform: mqtt
-  # state_topic: 'office/sensor1'
   state_topic: 'home/office/light_sensor'
-  name: 'Office brightness sensor'
+  name: 'Office brightness'
   unit_of_measurement: '%'
   value_template: '{{ value_json.brightness }}'
+
+# Temperature sensor office
+- platform: mqtt
+  state_topic: 'home/office/temperature_sensor'
+  name: 'Office temperature'
+  unit_of_measurement: 'C'
+  value_template: '{{ value_json.temperature }}'

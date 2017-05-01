@@ -90,8 +90,11 @@ office:
   entities:
     - light.office
     - light.office_hue
+    - light.office_side_lamp
+    - light.upstairs
     - switch.main_computer
-    - sensor.office_brightness_sensor
+    - sensor.office_brightness
+    - sensor.office_temperature
     - binary_sensor.motion_stairs
     - camera.office
     - switch.office_frontfacing_camera

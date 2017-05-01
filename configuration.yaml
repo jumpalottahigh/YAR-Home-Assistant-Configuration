@@ -20,9 +20,9 @@ frontend:
 
 # Add Alexa integration
 emulated_hue:
-  # Google Home set up
-  type: google_home
   listen_port: 80
+  # Google Home set up
+  # type: google_home
 
 http:
   # Uncomment this to add a password (recommended!)
@@ -140,3 +140,14 @@ binary_sensor:
   state_topic: 'home/livingroom/stairs/motion'
   name: 'Motion stairs'
   device_class: motion
+
+# Testing API.AI and Actions on Google
+apiai:
+  intents:
+    GetTemperature:
+      speech: We have {{ states.sensor.office_temperature }} degrees
+      async_action: False
+      action:
+        service: notify.notify
+        data_template:
+          message: Api.ai has send a request

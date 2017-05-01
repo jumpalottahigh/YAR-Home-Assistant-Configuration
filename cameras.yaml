@@ -7,7 +7,3 @@
 - platform: mjpeg
   name: Kids room
   mjpeg_url: !secret camera_kids_room_ip_credentials
-  # Slower image stream
-  # mjpeg_url: http://192.168.10.46:81/snapshot.cgi
-  # username: !secret camera_kids_room_username
-  # password: !secret camera_kids_room_password
