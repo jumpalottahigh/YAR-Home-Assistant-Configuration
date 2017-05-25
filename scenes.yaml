@@ -1,0 +1,18 @@
+# Create a few useful scenes, test them and add the Google Home commands to the list
+- name: Movies
+  entities:
+    light.living_room_hue:
+      state: on
+      brightness: 10
+    light.kitchen: off
+    switch.livingroom_tv_led_teal: on
+    switch.livingroom_ball_lights: on
+    switch.livingroom_window_lights: on
+    # switch to chromecast and more
+- name: Romantic
+  entities:
+    light.tv_back_light: on
+    light.ceiling:
+      state: on
+      xy_color: [0.33, 0.66]
+      brightness: 200

@@ -65,6 +65,9 @@ media_player:
     port: 8001
   - platform: cast
     host: !secret chromecast_ip
+    name: Livingroom Chromecast
+  - platform: cast
+    host: !secret google_home_ip
 
 # Mosquitto set up running on HA Pi
 mqtt:
@@ -131,15 +134,11 @@ sensor: !include sensors.yaml
 # Switches
 switch: !include switches.yaml
 
-# Lights (non Hue)
+# Lights
 light: !include lights.yaml
 
-# Testing. If this makes the final cut will be exported to its own file
-binary_sensor:
-  platform: mqtt
-  state_topic: 'home/livingroom/stairs/motion'
-  name: 'Motion stairs'
-  device_class: motion
+# Scenes
+scene: !include scenes.yaml
 
 # Testing API.AI and Actions on Google
 apiai:

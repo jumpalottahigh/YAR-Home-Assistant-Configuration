@@ -43,6 +43,14 @@ environment:
     - sensor.speedtest_ping
     - sensor.speedtest_download
     - sensor.speedtest_upload
+sensor_node_1_card:
+  name: Sensor Node 1
+  entities:
+    - sensor.sn1_temperature
+    - sensor.sn1_humidity
+    - sensor.sn1_ldr
+    - sensor.sn1_pir
+    - light.sn1_led
 family:
   name: Family
   entities:
@@ -90,12 +98,10 @@ office:
   entities:
     - light.office
     - light.office_hue
-    - light.office_side_lamp
-    - light.upstairs
     - switch.main_computer
     - sensor.office_brightness
     - sensor.office_temperature
-    - binary_sensor.motion_stairs
+    # - sensor.office_humidity
     - camera.office
     - switch.office_frontfacing_camera
     - switch.office_torch
