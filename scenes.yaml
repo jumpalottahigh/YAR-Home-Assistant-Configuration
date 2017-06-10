@@ -4,15 +4,34 @@
     light.living_room_hue:
       state: on
       brightness: 10
-    light.kitchen: off
+      transition: 5
+    light.kitchen:
+      state: off
+      transition: 5
+    light.office_hue:
+      state: off
+      transition: 5
     switch.livingroom_tv_led_teal: on
     switch.livingroom_ball_lights: on
     switch.livingroom_window_lights: on
     # switch to chromecast and more
-- name: Romantic
+- name: Party
   entities:
-    light.tv_back_light: on
-    light.ceiling:
+    light.living_room_hue:
       state: on
-      xy_color: [0.33, 0.66]
-      brightness: 200
+      brightness: 90
+      transition: 5
+      effect: colorloop
+    light.office_hue:
+      state: on
+      brightness: 90
+      transition: 5
+      effect: colorloop
+    light.kitchen:
+      state: on
+      brightness: 90
+      transition: 5
+      rgb_color: 255,68,0
+    switch.livingroom_tv_led_demo: on
+    switch.livingroom_ball_lights: on
+    switch.livingroom_window_lights: on

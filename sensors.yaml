@@ -5,6 +5,14 @@
   - symbol
   - humidity
 
+# Darksky weather sensor
+- platform: darksky
+  api_key: !secret darksky_key
+  monitored_conditions:
+    - precip_probability
+    - temperature
+    - precip_intensity
+
 # Time and date sensor
 - platform: time_date
   display_options:
@@ -62,7 +70,7 @@
   name: "SN1 LDR"
   ##This sensor is not calibrated to actual LUX. Rather, this a map of the input voltage ranging from 0 - 1023.
   unit_of_measurement: "LUX"
-  value_template: '{{ value_json.ldr | multiply(0.1) }}'
+  value_template: '{{ value_json.ldr }}'
 
 - platform: mqtt
   state_topic: "home/sensornode1"

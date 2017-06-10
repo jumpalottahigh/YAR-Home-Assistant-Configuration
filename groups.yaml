@@ -2,6 +2,7 @@
 # Change view name to `default_view` to overwrite the default view in the future
 living_room_view:
   view: yes
+  icon: mdi:home
   name: Living Room
   entities:
     - group.living_room
@@ -38,6 +39,9 @@ environment:
     - sensor.yr_humidity
     - sensor.yr_fog
     - sensor.yr_cloudiness
+    - sensor.dark_sky_precip_intensity
+    - sensor.dark_sky_precip_probability
+    - sensor.dark_sky_temperature
     - sun.sun
     - camera.georgi
     - sensor.speedtest_ping
@@ -101,7 +105,7 @@ office:
     - switch.main_computer
     - sensor.office_brightness
     - sensor.office_temperature
-    # - sensor.office_humidity
+    - binary_sensor.office_door
     - camera.office
     - switch.office_frontfacing_camera
     - switch.office_torch

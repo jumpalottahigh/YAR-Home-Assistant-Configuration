@@ -4,143 +4,196 @@
   host: !secret main_computer_ip
   name: Main Computer
 
-- platform: rpi_rf
-  gpio: 17
-  switches:
-    # RF 433 Outlets
-    livingroom_window_lights:
-      protocol: 1
-      pulselength: 177
-      code_on: 108 #10618124
-      code_off: 100 #10618116
-      signal_repetitions: 25
-    livingroom_ball_lights:
-      protocol: 1
-      pulselength: 177
-      code_on: 109 #10618124
-      code_off: 117 #10618116
-      signal_repetitions: 25
-    livingroom_charger:
-      protocol: 1
-      pulselength: 177
-      code_on: 217 #10618122
-      code_off: 209 #10618114
-      signal_repetitions: 25
-    kitchen_coffee_pot:
-      protocol: 1
-      pulselength: 177
-      code_on: 200 #10618122
-      code_off: 208 #10618114
-      signal_repetitions: 25
-    # RF 433 TV backlight
-    livingroom_tv_led:
-      protocol: 1
-      pulselength: 396
-      code_on: 13511425
-      code_off: 13511425
-      signal_repetitions: 25
-    livingroom_tv_led_mode_plus:
-      protocol: 1
-      pulselength: 396
-      code_on: 13511429
-      code_off: 13511429
-      signal_repetitions: 25
-    livingroom_tv_led_mode_minus:
-      protocol: 1
-      pulselength: 396
-      code_on: 13511435
-      code_off: 13511435
-      signal_repetitions: 25
-    livingroom_tv_led_speed_plus:
-      protocol: 1
-      pulselength: 396
-      code_on: 13511433
-      code_off: 13511433
-      signal_repetitions: 25
-    livingroom_tv_led_speed_minus:
-      protocol: 1
-      pulselength: 396
-      code_on: 13511431
-      code_off: 13511431
-      signal_repetitions: 25
-    livingroom_tv_led_demo:
-      protocol: 1
-      pulselength: 396
-      code_on: 13511432
-      code_off: 13511432
-      signal_repetitions: 25
-    livingroom_tv_led_color_plus:
-      protocol: 1
-      pulselength: 396
-      code_on: 13511434
-      code_off: 13511434
-      signal_repetitions: 25
-    livingroom_tv_led_color_minus:
-      protocol: 1
-      pulselength: 396
-      code_on: 13511437
-      code_off: 13511437
-      signal_repetitions: 25
-    livingroom_tv_led_brightness_plus:
-      protocol: 1
-      pulselength: 396
-      code_on: 13511436
-      code_off: 13511436
-      signal_repetitions: 25
-    livingroom_tv_led_brightness_minus:
-      protocol: 1
-      pulselength: 396
-      code_on: 13511439
-      code_off: 13511439
-      signal_repetitions: 25
-    livingroom_tv_led_white:
-      protocol: 1
-      pulselength: 396
-      code_on: 13511438
-      code_off: 13511438
-      signal_repetitions: 25
-    livingroom_tv_led_red:
-      protocol: 1
-      pulselength: 396
-      code_on: 13511440
-      code_off: 13511440
-      signal_repetitions: 25
-    livingroom_tv_led_green:
-      protocol: 1
-      pulselength: 396
-      code_on: 13511441
-      code_off: 13511441
-      signal_repetitions: 25
-    livingroom_tv_led_blue:
-      protocol: 1
-      pulselength: 396
-      code_on: 13511442
-      code_off: 13511442
-      signal_repetitions: 25
-    livingroom_tv_led_yellow:
-      protocol: 1
-      pulselength: 396
-      code_on: 13511443
-      code_off: 13511443
-      signal_repetitions: 25
-    livingroom_tv_led_teal:
-      protocol: 1
-      pulselength: 396
-      code_on: 13511444
-      code_off: 13511444
-      signal_repetitions: 25
-    livingroom_tv_led_purple:
-      protocol: 1
-      pulselength: 396
-      code_on: 13511445
-      code_off: 13511445
-      signal_repetitions: 25
+# 433toMQTT switches through the gateway
+# RF 433 outlets
+# Pulselength: 180
+- platform: mqtt
+  name: livingroom_window_lights
+  state_topic: "home/433toMQTT"
+  command_topic: "home/commands/MQTTto433/PLSL_180/433_1"
+  payload_on: "108"
+  payload_off: "100"
+  optimistic: false
+  retain: true
 
-# 433 RF codes rule set
-# First digit = room
-# 1 - Living room
-# 2 - Kitchen
-# ...
-# Second and third digit on and off with a difference of 1 byte starting with the off code
-#00 - 08
-#09 - 17
+- platform: mqtt
+  name: livingroom_ball_lights
+  state_topic: "home/433toMQTT"
+  command_topic: "home/commands/MQTTto433/PLSL_180/433_1"
+  payload_on: "109"
+  payload_off: "117"
+  optimistic: false
+  retain: true
+
+- platform: mqtt
+  name: livingroom_charger
+  state_topic: "home/433toMQTT"
+  command_topic: "home/commands/MQTTto433/PLSL_180/433_1"
+  payload_on: "217"
+  payload_off: "209"
+  optimistic: false
+  retain: true
+
+- platform: mqtt
+  name: kitchen_coffee_pot
+  state_topic: "home/433toMQTT"
+  command_topic: "home/commands/MQTTto433/PLSL_180/433_1"
+  payload_on: "200"
+  payload_off: "208"
+  optimistic: false
+  retain: true
+
+# RF 433 TV backlight
+# Pulselength: 396
+- platform: mqtt
+  name: livingroom_tv_led
+  state_topic: "home/433toMQTT"
+  command_topic: "home/commands/MQTTto433/PLSL_400/433_1"
+  payload_on: "13511425"
+  payload_off: "13511425"
+  optimistic: false
+  retain: true
+
+- platform: mqtt
+  name: livingroom_tv_led_mode_plus
+  state_topic: "home/433toMQTT"
+  command_topic: "home/commands/MQTTto433/PLSL_400/433_1"
+  payload_on: "13511429"
+  payload_off: "13511429"
+  optimistic: false
+  retain: true
+
+- platform: mqtt
+  name: livingroom_tv_led_mode_minus
+  state_topic: "home/433toMQTT"
+  command_topic: "home/commands/MQTTto433/PLSL_400/433_1"
+  payload_on: "13511435"
+  payload_off: "13511435"
+  optimistic: false
+  retain: true
+
+- platform: mqtt
+  name: livingroom_tv_led_speed_plus
+  state_topic: "home/433toMQTT"
+  command_topic: "home/commands/MQTTto433/PLSL_400/433_1"
+  payload_on: "13511433"
+  payload_off: "13511433"
+  optimistic: false
+  retain: true
+
+- platform: mqtt
+  name: livingroom_tv_led_speed_minus
+  state_topic: "home/433toMQTT"
+  command_topic: "home/commands/MQTTto433/PLSL_400/433_1"
+  payload_on: "13511431"
+  payload_off: "13511431"
+  optimistic: false
+  retain: true
+
+- platform: mqtt
+  name: livingroom_tv_led_demo
+  state_topic: "home/433toMQTT"
+  command_topic: "home/commands/MQTTto433/PLSL_400/433_1"
+  payload_on: "13511432"
+  payload_off: "13511432"
+  optimistic: false
+  retain: true
+
+- platform: mqtt
+  name: livingroom_tv_led_color_plus
+  state_topic: "home/433toMQTT"
+  command_topic: "home/commands/MQTTto433/PLSL_400/433_1"
+  payload_on: "13511434"
+  payload_off: "13511434"
+  optimistic: false
+  retain: true
+
+- platform: mqtt
+  name: livingroom_tv_led_color_minus
+  state_topic: "home/433toMQTT"
+  command_topic: "home/commands/MQTTto433/PLSL_400/433_1"
+  payload_on: "13511437"
+  payload_off: "13511437"
+  optimistic: false
+  retain: true
+
+- platform: mqtt
+  name: livingroom_tv_led_brightness_plus
+  state_topic: "home/433toMQTT"
+  command_topic: "home/commands/MQTTto433/PLSL_400/433_1"
+  payload_on: "13511436"
+  payload_off: "13511436"
+  optimistic: false
+  retain: true
+
+- platform: mqtt
+  name: livingroom_tv_led_brightness_minus
+  state_topic: "home/433toMQTT"
+  command_topic: "home/commands/MQTTto433/PLSL_400/433_1"
+  payload_on: "13511439"
+  payload_off: "13511439"
+  optimistic: false
+  retain: true
+
+- platform: mqtt
+  name: livingroom_tv_led_white
+  state_topic: "home/433toMQTT"
+  command_topic: "home/commands/MQTTto433/PLSL_400/433_1"
+  payload_on: "13511438"
+  payload_off: "13511438"
+  optimistic: false
+  retain: true
+
+- platform: mqtt
+  name: livingroom_tv_led_red
+  state_topic: "home/433toMQTT"
+  command_topic: "home/commands/MQTTto433/PLSL_400/433_1"
+  payload_on: "13511440"
+  payload_off: "13511440"
+  optimistic: false
+  retain: true
+
+- platform: mqtt
+  name: livingroom_tv_led_green
+  state_topic: "home/433toMQTT"
+  command_topic: "home/commands/MQTTto433/PLSL_400/433_1"
+  payload_on: "13511441"
+  payload_off: "13511441"
+  optimistic: false
+  retain: true
+
+- platform: mqtt
+  name: livingroom_tv_led_blue
+  state_topic: "home/433toMQTT"
+  command_topic: "home/commands/MQTTto433/PLSL_400/433_1"
+  payload_on: "13511442"
+  payload_off: "13511442"
+  optimistic: false
+  retain: true
+
+- platform: mqtt
+  name: livingroom_tv_led_yellow
+  state_topic: "home/433toMQTT"
+  command_topic: "home/commands/MQTTto433/PLSL_400/433_1"
+  payload_on: "13511443"
+  payload_off: "13511443"
+  optimistic: false
+  retain: true
+
+- platform: mqtt
+  name: livingroom_tv_led_teal
+  state_topic: "home/433toMQTT"
+  command_topic: "home/commands/MQTTto433/PLSL_400/433_1"
+  payload_on: "13511444"
+  payload_off: "13511444"
+  optimistic: false
+  retain: true
+
+- platform: mqtt
+  name: livingroom_tv_led_purple
+  state_topic: "home/433toMQTT"
+  command_topic: "home/commands/MQTTto433/PLSL_400/433_1"
+  payload_on: "13511445"
+  payload_off: "13511445"
+  optimistic: false
+  retain: true

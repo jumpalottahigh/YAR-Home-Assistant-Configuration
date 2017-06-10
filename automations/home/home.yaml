@@ -8,6 +8,10 @@
       entity_id: media_player.living_room_home
       data:
         message: "Hm. Maybe I will. Maybe I won't. Or maybe I will... eat... a little bit of... chicken leggie. Chicken leggie! Diaper change!"
+    - service: notify.yar
+      data:
+        title: Diaper change
+        message: 'Time for a diaper change!'
 
 - alias: "Hello Mr. President!"
   trigger:

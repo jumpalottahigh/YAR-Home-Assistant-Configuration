@@ -111,35 +111,3 @@
         brightness: 225
         color_temp: 327
         transition: 2
-
-# Turn off TV backlight when walking on the stairs
-# - alias: "Turn off TV backlight when walking on the stairs"
-#   trigger:
-#     - platform: state
-#       entity_id: binary_sensor.motion_stairs
-#       from: 'off'
-#       to: 'on'
-#       state: 'on'
-#   action:
-#     - service: switch.turn_off
-#       entity_id: switch.livingroom_tv_led
-    # - service: tts.google_say
-    #   entity_id: media_player.living_room_home
-    #   data:
-    #     message: "Stairwell motion detected. Turning off TV backlight."
-
-# Turn on TV backlight when motion is no longer detected on the stairs
-# - alias: "Turn on TV backlight when motion is no longer detected on the stairs"
-#   trigger:
-#     - platform: state
-#       entity_id: binary_sensor.motion_stairs
-#       from: 'on'
-#       to: 'off'
-#       state: 'off'
-#   action:
-#     - service: switch.turn_on
-#       entity_id: switch.livingroom_tv_led
-    # - service: tts.google_say
-    #   entity_id: media_player.living_room_home
-    #   data:
-    #     message: "Motion no longer detected. Turning on TV backlight."

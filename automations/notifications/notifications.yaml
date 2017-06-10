@@ -1,0 +1,18 @@
+# Rain Alert
+- alias: 'Raining'
+  trigger:
+    platform: state
+    entity_id: sensor.dark_sky_precip_intensity
+    from: '0'
+  action:
+    - service: tts.google_say
+      entity_id: media_player.living_room_home
+      data_template:
+        message: 'Weather forecast: There is currently {{ states.sensor.dark_sky_precip_probability.state }} chance of rain and it is {{ states.sensor.dark_sky_temperature.state | int }}degrees outside. Please consider putting away the deck furniture cushions!'
+        cache: false
+    - delay: 00:01:00
+    - service: automation.turn_off
+      entity_id: automation.raining
+    - delay: 00:30:00
+    - service: automation.turn_on
+      entity_id: automation.raining

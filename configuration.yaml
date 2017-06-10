@@ -128,8 +128,11 @@ group: !include groups.yaml
 # Input select
 input_select: !include input_select.yaml
 
-# Weather Prediction
+# Sensors
 sensor: !include sensors.yaml
+
+# Binary sensors
+binary_sensor: !include binary_sensors.yaml
 
 # Switches
 switch: !include switches.yaml
@@ -150,3 +153,8 @@ apiai:
         service: notify.notify
         data_template:
           message: Api.ai has send a request
+
+notify:
+  - platform: pushbullet
+    name: YAR
+    api_key: !secret pushbullet_key
