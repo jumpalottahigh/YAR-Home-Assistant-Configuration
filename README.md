@@ -1,38 +1,55 @@
 # YAR Home Assistant Configuration
 
-The YAnev Residence (YAR) configuration for Home Assistant is a work in progress and currently features:
-
-## Automations:
-- Living room and office lights on 45 min before sunset and TTS announce on Chromecast
-- Turn on coffee pot at 7:00 and turn it off at 7:05
-- Home/work presence detection
-- Blink living room lights when arrive home
-- ...
-
-## Home Assistant actions:
-- Turn on Main PC (WOL)
-- Turn on manything cameras on/off remotely and tune in
-- Send TTS to living room TV
-- Turn on/off living room and office lights
-- Turn on/off Chromecast
-- ...
+The `YA`nev `R`esidence (YAR) configuration for [Home Assistant](https://home-assistant.io/)
 
 ## Device / Sensor list:
-- Philips Hue
-- Chromecast
-- IP Camera
-- Android phones as Manything cameras
-- Raspberry PI
-- Arduino Leonardo
-- ...
 
-## Working on / Coming soon:
-- RGB LED strips
-- Reverse engineering 433 Mhz RF remote's connection
 - Google Home
 - Amazon Echo
-- NodeMCU 8266 chip
-- 433 Mhz transmitter & receiver
+- Philips Hue
+- IKEA Tradfri bulbs
+- IKEA Tradfri motion sensors
+- Chromecast 1 and 2
+- Generic IP Camera
+- Android phones as IP cameras
+- Raspberry PI
+- Many ESP8266 chips as NodeMCUs
+- Arduino Leonardo
+- Arduino Nano
+- Raspberry PI Zero
+- DHT22 Temperature and Humidity sensors
+- TEMT6000 LUX sensors
+- TSL2561 LUX sensors
+- DS18B20 Temperature sensors
+- PIR sensors
+- Main computer
+- Smart TV
+- 433 MHz RF outlets
+- 433 MHz RF led strips
+- 433 MHz RF door sensors
+
+## Automations:
+- Coming soon.
+- ...
+
+## Interfaces:
+- Wall mounted android device
+> unlocks with a wave gesture, displays Home Assistant UI
+
+- iPad
+> iOS Home Assistant app
+
+- iPhone, Google Nexus 6P
+> personal use
+
+- Amazon Echo
+> Alexa has complete access over the entire set of devices and sensors through an Emulated Hue component in Home Assistant.
+
+- Google Home
+> Currently Google Assistant's implementation relies entirely on IFTTT hooks to Home Assistant through the IFTTT Maker channel, which is less than optimal, but will hopefully change in the near future. Supports lights, accents, scenes, etc.
+
+## Working on / Coming soon:
+- Coming soon.
 - ...
 
 ### Social Links
