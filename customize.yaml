@@ -115,11 +115,11 @@ switch.livingroom_charger:
   friendly_name: iPhone Charger
 
 # Sensor customizations
-sensor.office_brightness:
-  icon: mdi:brightness-7
+# sensor.office_brightness:
+#   icon: mdi:brightness-7
 
-sensor.office_temperature:
-  icon: mdi:thermometer
+# sensor.office_temperature:
+#   icon: mdi:thermometer
 
 # sensor.office_humidity:
 #   icon: mdi:water-percent
@@ -131,6 +131,15 @@ sensor.sn1_ldr:
   icon: mdi:brightness-7
 
 sensor.sn1_pir:
+  icon: mdi:run
+
+sensor.sn2_humidity:
+  icon: mdi:water-percent
+
+sensor.sn2_ldr:
+  icon: mdi:brightness-7
+
+sensor.sn2_pir:
   icon: mdi:run
 
 # Hide HA device tracker

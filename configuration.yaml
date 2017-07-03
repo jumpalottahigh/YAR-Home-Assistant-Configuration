@@ -49,7 +49,7 @@ logbook:
 sun:
 
 # Config panel enabler
-config:
+# config:
 
 # Text to speech
 tts:
@@ -158,3 +158,11 @@ notify:
   - platform: pushbullet
     name: YAR
     api_key: !secret pushbullet_key
+
+input_slider:
+  porch_animation_speed:
+    name: Porch Animation Speed
+    initial: 150
+    min: 1
+    max: 150
+    step: 10

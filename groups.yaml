@@ -55,6 +55,14 @@ sensor_node_1_card:
     - sensor.sn1_ldr
     - sensor.sn1_pir
     - light.sn1_led
+sensor_node_2_card:
+  name: Sensor Node 2
+  entities:
+    - sensor.sn2_temperature
+    - sensor.sn2_humidity
+    - sensor.sn2_ldr
+    - sensor.sn2_pir
+    - light.sn2_led
 family:
   name: Family
   entities:

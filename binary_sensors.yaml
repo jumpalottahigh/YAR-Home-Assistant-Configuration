@@ -3,4 +3,4 @@
   name: Office door
   payload_on: 4383534
   payload_off: 4383527
-  sensor_class: motion
+  device_class: motion

@@ -53,3 +53,48 @@
       entity_id: media_player.living_room_home
       data:
         message: "Georgi has arrived home."
+
+# Set TV backlights to demo when music is playing on Google Home
+- alias: 'Playing music on Google Home turns on TV backlight demo'
+  trigger:
+    platform: state
+    entity_id: media_player.living_room_home
+    to: 'playing'
+  action:
+    - service: homeassistant.turn_on
+      entity_id: switch.livingroom_ball_lights
+    # - service: homeassistant.turn_on
+    #   entity_id: switch.livingroom_tv_led_demo
+    - service: homeassistant.turn_on
+      entity_id: switch.livingroom_tv_led_mode_plus
+    - service: homeassistant.turn_off
+      entity_id: switch.livingroom_tv_led_mode_plus
+    - service: homeassistant.turn_on
+      entity_id: switch.livingroom_tv_led_mode_plus
+    - service: homeassistant.turn_off
+      entity_id: switch.livingroom_tv_led_mode_plus
+    - service: homeassistant.turn_on
+      entity_id: switch.livingroom_tv_led_mode_plus
+    - service: homeassistant.turn_off
+      entity_id: switch.livingroom_tv_led_mode_plus
+    - service: homeassistant.turn_on
+      entity_id: switch.livingroom_tv_led_mode_plus
+    - service: homeassistant.turn_off
+      entity_id: switch.livingroom_tv_led_mode_plus
+    - service: homeassistant.turn_on
+      entity_id: switch.livingroom_tv_led_mode_plus
+    - service: homeassistant.turn_off
+      entity_id: switch.livingroom_tv_led_mode_plus
+
+# Set TV backlights to demo when music is playing on Google Home
+- alias: 'Stopping music played on Google Home turn regular TV backlight'
+  trigger:
+    platform: state
+    entity_id: media_player.living_room_home
+    from: 'playing'
+    to: 'paused'
+  action:
+    - service: homeassistant.turn_off
+      entity_id: switch.livingroom_ball_lights
+    - service: homeassistant.turn_on
+      entity_id: switch.livingroom_tv_led_teal

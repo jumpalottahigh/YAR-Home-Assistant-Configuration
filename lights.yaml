@@ -26,5 +26,46 @@
   optimistic: false
   qos: 0
 
+- platform: mqtt_json
+  name: "SN2 LED"
+  state_topic: "home/sensornode2"
+  command_topic: "home/sensornode2/set"
+  brightness: true
+  flash: true
+  rgb: true
+  optimistic: false
+  qos: 0
+
+# ws2812b led strips on WeMos
+- platform: mqtt_json
+  name: "Porch Strip"
+  state_topic: "home/porch"
+  command_topic: "home/porch/set"
+  effect: true
+  effect_list:
+    - bpm
+    - candy cane  
+    - confetti  
+    - cyclon rainbow  
+    - dots  
+    - fire  
+    - glitter  
+    - juggle  
+    - lightning
+    - noise  
+    - police all  
+    - police one  
+    - rainbow  
+    - rainbow with glitter  
+    - ripple  
+    - sinelon  
+    - solid  
+    - twinkle  
+  brightness: true
+  flash: true
+  rgb: true
+  optimistic: false
+  qos: 0
+
 # Tradfri
 # ...

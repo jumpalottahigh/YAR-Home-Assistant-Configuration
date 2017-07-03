@@ -65,17 +65,10 @@
         entity_id:
           - light.office_hue
           - light.living_room_hue
-        brightness: 100
-        color_temp: 410
-        transition: 2
-    - service: light.turn_on
-      data:
-        entity_id:
           - light.kids_room
           - light.kitchen
-        brightness: 144
-        color_temp: 340
-        rgb_color: [255, 250, 202]
+        brightness: 100
+        color_temp: 410
         transition: 2
     - service: tts.google_say
       entity_id: media_player.living_room_home
@@ -86,17 +79,18 @@
 - alias: "Kids room lights off at 21:00"
   trigger:
     - platform: time
-      after: "21:00"
+      at: "21:00"
   action:
     - service: light.turn_off
       entity_id: light.kids_room
 
-# Turn on office light based on room light conditions
-- alias: "Turn on office light based on room light conditions"
+# LUX SENSOR BASED AUTOMATIONS
+# Turn on office light based on LUX sensor
+- alias: "Turn on office light based on LUX sensor"
   trigger:
     platform: numeric_state
-    entity_id: sensor.office_brightness
-    below: 50
+    entity_id: sensor.sn1_ldr
+    below: 10
   condition:
     - condition: state
       entity_id: light.office_hue
@@ -110,4 +104,38 @@
           - light.office_hue
         brightness: 225
         color_temp: 327
-        transition: 2
+        transition: 5
+
+# Turn on living room light based on LUX sensor
+- alias: "Turn on living room light based on LUX sensor"
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.sn2_ldr
+    below: 10
+  condition:
+    - condition: state
+      entity_id: light.living_room_hue
+      state: "off"
+    - condition: time
+      after: "07:00"
+  action:
+    - service: homeassistant.turn_on
+      data:
+        entity_id:
+          - light.living_room_hue
+        brightness: 225
+        color_temp: 327
+        transition: 5
+
+# Porch ws2812b led strip
+- alias: "Porch Animation Speed"
+  initial_state: True
+  hide_entity: False
+  trigger:
+    - platform: state
+      entity_id: input_slider.porch_animation_speed
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: "home/porch/set"
+        payload: '{"transition":{{ trigger.to_state.state | int }}}'
