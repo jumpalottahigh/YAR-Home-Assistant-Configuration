@@ -2,6 +2,8 @@
 
 The `YA`nev `R`esidence (YAR) configuration for [Home Assistant](https://home-assistant.io/)
 
+![YAR Home Assistant UI](yar-ha-screenshot.png)
+
 ## Device / Sensor list:
 
 - Google Home
@@ -21,6 +23,7 @@ The `YA`nev `R`esidence (YAR) configuration for [Home Assistant](https://home-as
 - TEMT6000 LUX sensors
 - TSL2561 LUX sensors
 - DS18B20 Temperature sensors
+- WS2812B Addressable LED strips
 - PIR sensors
 - Main computer
 - Smart TV
@@ -29,7 +32,12 @@ The `YA`nev `R`esidence (YAR) configuration for [Home Assistant](https://home-as
 - 433 MHz RF door sensors
 
 ## Automations:
-- Coming soon.
+
+- LUX based switching on and off of lights
+- Time based weekday switching off of house
+- Weekday morning coffee automatic preparation
+- Switch on devices on arrival at home
+- More coming soon...
 - ...
 
 ## Interfaces:
