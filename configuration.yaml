@@ -20,6 +20,7 @@ frontend:
 
 # Add Alexa integration
 emulated_hue:
+  host_ip: !secret emulated_hue_ip
   listen_port: 80
   # Google Home set up
   # type: google_home
@@ -29,6 +30,12 @@ http:
   api_password: !secret ha_api_password
   # Uncomment this if you are using SSL or running in Docker etc
   # base_url: example.duckdns.org:8123
+
+# Tradfri
+tradfri:
+  host: !secret tradfri_ip
+  api_key: !secret tradfri_api
+  allow_tradfri_groups: false
 
 # Checks for available updates
 updater:
@@ -78,35 +85,47 @@ mqtt:
   username: !secret mqtt_username_mosquitto
   password: !secret mqtt_password_mosquitto
 
-# Trackers
-# Georgi 6P tracker with Owntracks and cloudmqtt
+# Device trackers
 device_tracker:
   - platform: owntracks
     max_gps_accuracy: 200
+    consider_home: 180
+  # TODO: Work on the know devices list
+  - platform: netgear
+    host: !secret netgear_ip
+    username: !secret netgear_username
+    password: !secret netgear_password
+    interval_seconds: 10
     consider_home: 180
 
 # IFTT Maker channel
 ifttt:
   key: !secret ifttt_maker_key
 
+# Notifications
+notify:
+  - platform: pushbullet
+    name: YAR
+    api_key: !secret pushbullet_key
+
 # Define zones for triggering actions
 zone:
   name: Sofi's Work
-  latitude: 60.2974852
-  longitude: 25.3298393
+  latitude: !secret sofi_work_latitude
+  longitude: !secret sofi_work_longitude
   radius: 20
   icon: mdi:beer
 
 zone 2:
   name: Georgi's Work
-  latitude: 60.1614637
-  longitude: 24.904713
+  latitude: !secret georgi_work_latitude
+  longitude: !secret georgi_work_longitude
   icon: mdi:security
 
 zone 3:
   name: Mr. President
-  latitude: 60.167988
-  longitude: 24.9548917
+  latitude: !secret mr_president_latitude
+  longitude: !secret mr_president_longitude
   icon: mdi:memory
 
 ###############################################
@@ -142,22 +161,6 @@ light: !include lights.yaml
 
 # Scenes
 scene: !include scenes.yaml
-
-# Testing API.AI and Actions on Google
-apiai:
-  intents:
-    GetTemperature:
-      speech: We have {{ states.sensor.office_temperature }} degrees
-      async_action: False
-      action:
-        service: notify.notify
-        data_template:
-          message: Api.ai has send a request
-
-notify:
-  - platform: pushbullet
-    name: YAR
-    api_key: !secret pushbullet_key
 
 input_slider:
   porch_animation_speed:

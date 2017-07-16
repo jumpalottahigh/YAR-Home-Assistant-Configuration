@@ -114,16 +114,6 @@ switch.kitchen_coffee_pot:
 switch.livingroom_charger:
   friendly_name: iPhone Charger
 
-# Sensor customizations
-# sensor.office_brightness:
-#   icon: mdi:brightness-7
-
-# sensor.office_temperature:
-#   icon: mdi:thermometer
-
-# sensor.office_humidity:
-#   icon: mdi:water-percent
-
 sensor.sn1_humidity:
   icon: mdi:water-percent
 
@@ -147,10 +137,6 @@ device_tracker.username_gp:
   hidden: true
 
 # Hide useless android camera sensors
-sensor.office_2_audio_connections:
-  hidden: true
-sensor.office_2_video_connections:
-  hidden: true
 sensor.office_audio_connections:
   hidden: true
 sensor.office_video_connections:

@@ -1,18 +1,106 @@
+# High temperature warning (office - sensor 1)
+- alias: 'Temperature warning: office'
+  trigger:
+    platform: state
+    entity_id: sensor.sn1_temperature
+  condition:
+    condition: template
+    value_template: '{{ (states("sensor.sn1_temperature") | float) > (27 | float) }}'
+  action:
+    - service: tts.google_say
+      entity_id: media_player.living_room_home
+      data_template:
+        message: 'Warning! Office temperature has reached {{ states.sensor.sn1_temperature.state }} degrees.'
+    - service: notify.yar
+      data_template:
+        title: Office temperature too high
+        message: 'Temperature: {{ states.sensor.sn1_temperature.state }}'
+    - service: mqtt.publish
+      data_template:
+        topic: 'home/sensornode1/set'
+        payload: '{"color": {"g": 0, "r": 255, "b": 0}, "state": "ON"}'
+    - delay: 00:01:00
+
+# High humidity warning (office - sensor 1)
+- alias: 'Humidity warning: office'
+  trigger:
+    platform: state
+    entity_id: sensor.sn1_humidity
+  condition:
+    condition: template
+    value_template: '{{ (states("sensor.sn1_humidity") | float) > (55 | float) }}'
+  action:
+    - service: tts.google_say
+      entity_id: media_player.living_room_home
+      data_template:
+        message: 'Warning! Office humidity has reached {{ states.sensor.sn1_humidity.state }} percent.'
+    - service: notify.yar
+      data_template:
+        title: Office humidity too high
+        message: 'Humidity: {{ states.sensor.sn1_humidity.state }}'
+    - service: mqtt.publish
+      data_template:
+        topic: 'home/sensornode1/set'
+        payload: '{"color": {"g": 0, "r": 0, "b": 255}, "state": "ON"}'
+    - delay: 00:01:00
+
+# High temperature warning (livingroom - sensor 2)
+- alias: 'Temperature warning: livingroom'
+  trigger:
+    platform: state
+    entity_id: sensor.sn2_temperature
+  condition:
+    condition: template
+    value_template: '{{ (states("sensor.sn2_temperature") | float) > (27 | float) }}'
+  action:
+    - service: tts.google_say
+      entity_id: media_player.living_room_home
+      data_template:
+        message: 'Warning! Livingroom temperature has reached {{ states.sensor.sn2_temperature.state }} degrees.'
+    - service: notify.yar
+      data_template:
+        title: Livingroom temperature too high
+        message: 'Temperature: {{ states.sensor.sn2_temperature.state }}'
+    - service: mqtt.publish
+      data_template:
+        topic: 'home/sensornode2/set'
+        payload: '{"color": {"g": 0, "r": 255, "b": 0}, "state": "ON"}'
+    - delay: 00:01:00
+
+# High humidity warning (livingroom - sensor 2)
+- alias: 'Humidity warning: livingroom'
+  trigger:
+    platform: state
+    entity_id: sensor.sn2_humidity
+  condition:
+    condition: template
+    value_template: '{{ (states("sensor.sn2_humidity") | float) > (55 | float) }}'
+  action:
+    - service: tts.google_say
+      entity_id: media_player.living_room_home
+      data_template:
+        message: 'Warning! Livingroom humidity has reached {{ states.sensor.sn2_humidity.state }} percent.'
+    - service: notify.yar
+      data_template:
+        title: Livingroom humidity too high
+        message: 'Humidity: {{ states.sensor.sn2_humidity.state }}'
+    - service: mqtt.publish
+      data_template:
+        topic: 'home/sensornode2/set'
+        payload: '{"color": {"g": 0, "r": 0, "b": 255}, "state": "ON"}'
+    - delay: 00:01:00
+
 # Rain Alert
 - alias: 'Raining'
   trigger:
     platform: state
     entity_id: sensor.dark_sky_precip_intensity
     from: '0'
+    to: '0.4'
   action:
     - service: tts.google_say
       entity_id: media_player.living_room_home
       data_template:
         message: 'Weather forecast: There is currently {{ states.sensor.dark_sky_precip_probability.state }} chance of rain and it is {{ states.sensor.dark_sky_temperature.state | int }}degrees outside. Please consider putting away the deck furniture cushions!'
         cache: false
-    - delay: 00:01:00
-    - service: automation.turn_off
-      entity_id: automation.raining
-    - delay: 00:30:00
-    - service: automation.turn_on
-      entity_id: automation.raining
+    - delay: 01:00:00

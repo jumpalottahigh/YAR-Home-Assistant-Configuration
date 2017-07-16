@@ -35,7 +35,7 @@
 - alias: "Lights off at 23:45 (sun-thu)"
   trigger:
     - platform: time
-      after: "23:45"
+      at: "23:45"
   condition:
     - condition: time
       weekday:
@@ -58,7 +58,7 @@
 - alias: "Dim lights to night mode at 20:00"
   trigger:
     - platform: time
-      after: "20:00"
+      at: "20:00"
   action:
     - service: light.turn_on
       data:
@@ -106,6 +106,22 @@
         color_temp: 327
         transition: 5
 
+# Turn off office light based on LUX sensor
+- alias: "Turn off office light based on LUX sensor"
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.sn1_ldr
+    above: 25
+  condition:
+    - condition: state
+      entity_id: light.office_hue
+      state: "on"
+    - condition: time
+      after: "07:00"
+  action:
+    - service: homeassistant.turn_off
+      entity_id: light.office_hue
+
 # Turn on living room light based on LUX sensor
 - alias: "Turn on living room light based on LUX sensor"
   trigger:
@@ -126,6 +142,22 @@
         brightness: 225
         color_temp: 327
         transition: 5
+
+# Turn off living room light based on LUX sensor
+- alias: "Turn off living room light based on LUX sensor"
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.sn2_ldr
+    above: 25
+  condition:
+    - condition: state
+      entity_id: light.living_room_hue
+      state: "on"
+    - condition: time
+      after: "07:00"
+  action:
+    - service: homeassistant.turn_off
+      entity_id: light.living_room_hue
 
 # Porch ws2812b led strip
 - alias: "Porch Animation Speed"

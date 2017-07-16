@@ -1,18 +1,3 @@
-# Daily fun announcement
-- alias: "Announce a daily fun diaper change"
-  trigger:
-    - platform: time
-      after: "18:00"
-  action:
-    - service: tts.google_say
-      entity_id: media_player.living_room_home
-      data:
-        message: "Hm. Maybe I will. Maybe I won't. Or maybe I will... eat... a little bit of... chicken leggie. Chicken leggie! Diaper change!"
-    - service: notify.yar
-      data:
-        title: Diaper change
-        message: 'Time for a diaper change!'
-
 - alias: "Hello Mr. President!"
   trigger:
     platform: zone
@@ -60,31 +45,16 @@
     platform: state
     entity_id: media_player.living_room_home
     to: 'playing'
+  condition:
+      condition: and
+      conditions:
+        - condition: template
+          value_template: '{{ states.media_player.living_room_home.attributes.app_name == "Google Play Music" }}'
   action:
     - service: homeassistant.turn_on
       entity_id: switch.livingroom_ball_lights
-    # - service: homeassistant.turn_on
-    #   entity_id: switch.livingroom_tv_led_demo
     - service: homeassistant.turn_on
-      entity_id: switch.livingroom_tv_led_mode_plus
-    - service: homeassistant.turn_off
-      entity_id: switch.livingroom_tv_led_mode_plus
-    - service: homeassistant.turn_on
-      entity_id: switch.livingroom_tv_led_mode_plus
-    - service: homeassistant.turn_off
-      entity_id: switch.livingroom_tv_led_mode_plus
-    - service: homeassistant.turn_on
-      entity_id: switch.livingroom_tv_led_mode_plus
-    - service: homeassistant.turn_off
-      entity_id: switch.livingroom_tv_led_mode_plus
-    - service: homeassistant.turn_on
-      entity_id: switch.livingroom_tv_led_mode_plus
-    - service: homeassistant.turn_off
-      entity_id: switch.livingroom_tv_led_mode_plus
-    - service: homeassistant.turn_on
-      entity_id: switch.livingroom_tv_led_mode_plus
-    - service: homeassistant.turn_off
-      entity_id: switch.livingroom_tv_led_mode_plus
+      entity_id: switch.livingroom_tv_led_demo
 
 # Set TV backlights to demo when music is playing on Google Home
 - alias: 'Stopping music played on Google Home turn regular TV backlight'
@@ -92,9 +62,17 @@
     platform: state
     entity_id: media_player.living_room_home
     from: 'playing'
-    to: 'paused'
+    # to: 'paused'
+  condition:
+      condition: or
+      conditions:
+        - condition: state
+          entity_id: media_player.living_room_home
+          state: 'paused'
+        - condition: state
+          entity_id: media_player.living_room_home
+          state: 'idle'
   action:
-    - service: homeassistant.turn_off
-      entity_id: switch.livingroom_ball_lights
+    #  TODO: add ws2812b led strips
     - service: homeassistant.turn_on
       entity_id: switch.livingroom_tv_led_teal

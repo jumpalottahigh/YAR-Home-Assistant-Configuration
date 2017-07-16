@@ -3,5 +3,3 @@
   switches:
     - ffc
     - torch
-- host: !secret camera_office_2_ip
-  name: Office 2

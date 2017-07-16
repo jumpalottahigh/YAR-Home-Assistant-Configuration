@@ -2,7 +2,7 @@
 # Change view name to `default_view` to overwrite the default view in the future
 living_room_view:
   view: yes
-  icon: mdi:home
+  # icon: mdi:home
   name: Living Room
   entities:
     - group.living_room
@@ -68,6 +68,7 @@ family:
   entities:
     - device_tracker.georgi6p_gp
     - device_tracker.sofiip_sp
+    - device_tracker.98b8e3e92581
     - input_select.georgi_status
     - input_select.sofi_status
 kitchen:
@@ -111,13 +112,10 @@ office:
     - light.office
     - light.office_hue
     - switch.main_computer
-    - sensor.office_brightness
-    - sensor.office_temperature
     - binary_sensor.office_door
     - camera.office
     - switch.office_frontfacing_camera
     - switch.office_torch
-    - camera.office_2
 kids_room:
   name: Kids Room
   entities:
