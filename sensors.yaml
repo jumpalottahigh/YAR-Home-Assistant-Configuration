@@ -26,6 +26,25 @@
     - download
     - upload
 
+# Backyard soil sensors
+- platform: mqtt
+  state_topic: "home/backyard/soil"
+  name: "Soil Moisture Tomatoes"
+  unit_of_measurement: "%"
+  value_template: '{{ value_json.moisture1 | round(2) }}'
+
+- platform: mqtt
+  state_topic: "home/backyard/soil"
+  name: "Soil Moisture Potatoes"
+  unit_of_measurement: "%"
+  value_template: '{{ value_json.moisture2 | round(2) }}'
+
+- platform: mqtt
+  state_topic: "home/backyard/soil"
+  name: "Soil Moisture Onions"
+  unit_of_measurement: "%"
+  value_template: '{{ value_json.moisture3 | round(2) }}'
+
 ### ESP8266 Multisensors - Node 1
 - platform: mqtt
   state_topic: "home/sensornode1"

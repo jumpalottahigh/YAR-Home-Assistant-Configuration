@@ -4,6 +4,11 @@
   still_image_url: https://maps.googleapis.com/maps/api/staticmap?center={{ states.device_tracker.georgi6p_gp.attributes.latitude }},{{ states.device_tracker.georgi6p_gp.attributes.longitude }}&zoom=15&size=500x500&maptype=roadmap&markers=color:blue%7Clabel:P%7C{{ states.device_tracker.georgi6p_gp.attributes.latitude }},{{ states.device_tracker.georgi6p_gp.attributes.longitude }}
   limit_refetch_to_url_change: true
 
+- platform: generic
+  name: Sofi's position
+  still_image_url: https://maps.googleapis.com/maps/api/staticmap?center={{ states.device_tracker.sofiip_sp.attributes.latitude }},{{ states.device_tracker.sofiip_sp.attributes.longitude }}&zoom=15&size=500x500&maptype=roadmap&markers=color:blue%7Clabel:P%7C{{ states.device_tracker.sofiip_sp.attributes.latitude }},{{ states.device_tracker.sofiip_sp.attributes.longitude }}
+  limit_refetch_to_url_change: true
+
 - platform: mjpeg
   name: Kids room
   mjpeg_url: !secret camera_kids_room_ip_credentials

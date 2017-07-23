@@ -103,4 +103,8 @@
       data_template:
         message: 'Weather forecast: There is currently {{ states.sensor.dark_sky_precip_probability.state }} chance of rain and it is {{ states.sensor.dark_sky_temperature.state | int }}degrees outside. Please consider putting away the deck furniture cushions!'
         cache: false
+    - service: notify.yar
+      data_template:
+        title: It's about to rain!
+        message: 'Weather forecast: There is currently {{ states.sensor.dark_sky_precip_probability.state }} chance of rain and it is {{ states.sensor.dark_sky_temperature.state | int }}degrees outside. Please consider putting away the deck furniture cushions!'
     - delay: 01:00:00
