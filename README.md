@@ -57,8 +57,13 @@ The `YA`nev `R`esidence (YAR) configuration for [Home Assistant](https://home-as
 > Currently Google Assistant's implementation relies entirely on IFTTT hooks to Home Assistant through the IFTTT Maker channel, which is less than optimal, but will hopefully change in the near future. Supports lights, accents, scenes, etc.
 
 ## Working on / Coming soon:
-- Coming soon.
-- ...
+- Waterproof soil moisture sensors on a NodeMCU with a battery
+- Ceiling led lighting with and without ws2812b strips
+- Scene switcher with a numeric keypad
+- Make the ISS paper model move with servos and fishing cord
+- Paint, hang and make planets (Mars, Jupiter, Pluto) and moons (Europa, Enceladus, Titan) styrofoam models move with servos
+- Window blinds
+- More coming soon...
 
 ### Social Links
 
