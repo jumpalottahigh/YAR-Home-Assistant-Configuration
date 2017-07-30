@@ -53,6 +53,10 @@ backyard_card:
     - sensor.soil_moisture_tomatoes
     - sensor.soil_moisture_potatoes
     - sensor.soil_moisture_onions
+stairs_card:
+  name: Stairs
+  entities:
+    - light.upstairs
 sensor_node_1_card:
   name: Sensor Node 1
   entities:

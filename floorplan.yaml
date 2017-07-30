@@ -1,0 +1,100 @@
+name: Demo Floorplan
+image: /local/custom_ui/floorplan/floorplan.svg
+stylesheet: /local/custom_ui/floorplan/floorplan.css
+warnings:
+pan_zoom:
+date_format: DD-MMM-YYYY
+groups:
+  - name: Lights
+    entities:
+        - light.kitchen
+        - light.office
+    states:
+      - state: 'on'
+        class: 'light-on'
+      - state: 'off'
+        class: 'light-off'
+    action:
+      service: toggle
+  - name: Sensors
+    entities:
+      - sensor.sn1_temperature
+      # - group.major_city_temp_sensors
+    text_template: '${entity.state ? entity.state : "unknown"}'
+    class_template: '
+      var temp = parseFloat(entity.state.replace("°", ""));
+      if (temp < 10)
+        return "temp-low";
+      else if (temp < 30)
+        return "temp-medium";
+      else
+        return "temp-high";
+      '
+  - name: Dark Sky Sensors
+    entities:
+      - sensor.home_dark_sky_icon
+    image_template: '
+      var imageName = "";
+
+      switch (entity.state) {
+        case "clear-day":
+          imageName = "day";
+          break;
+
+        case "clear-night":
+          imageName = "night";
+          break;
+
+        case "partly-cloudy-day":
+          imageName = "cloudy-day-1";
+          break;
+
+        case "partly-cloudy-night":
+          imageName = "cloudy-night-1";
+          break;
+
+        case "cloudy":
+          imageName = "cloudy";
+          break;
+
+        case "rain":
+          imageName = "rainy-1";
+          break;
+
+        case "snow":
+          imageName = "snowy-1";
+          break;
+      }
+
+      return "/local/custom_ui/floorplan/images/weather/" + imageName + ".svg";
+      '
+  - name: Switches
+    entities:
+      - switch.livingroom_ball_lights
+    states:
+      - state: 'on'
+        class: 'doorbell-on'
+      - state: 'off'
+        class: 'doorbell-off'
+    action:
+      domain: switch
+      service: toggle
+  - name: Binary Sensors
+    entities:
+      - binary_sensor.office_door
+    states:
+      - state: 'off'
+        class: 'info-background'
+      - state: 'on'
+        class: 'warning-background'
+    state_transitions:
+      - name: On to off
+        from_state: 'on'
+        to_state: 'off'
+        duration: 10
+  - name: Cameras
+    entities:
+      - camera.office
+    states:
+      - state: 'idle'
+        class: 'camera-idle'

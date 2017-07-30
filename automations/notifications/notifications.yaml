@@ -28,7 +28,7 @@
     entity_id: sensor.sn1_humidity
   condition:
     condition: template
-    value_template: '{{ (states("sensor.sn1_humidity") | float) > (55 | float) }}'
+    value_template: '{{ (states("sensor.sn1_humidity") | float) > (60 | float) }}'
   action:
     - service: tts.google_say
       entity_id: media_player.living_room_home
@@ -42,6 +42,11 @@
       data_template:
         topic: 'home/sensornode1/set'
         payload: '{"color": {"g": 0, "r": 0, "b": 255}, "state": "ON"}'
+    - delay: 00:01:00
+    - service: mqtt.publish
+      data_template:
+        topic: 'home/sensornode1/set'
+        payload: '{"color": {"g": 255, "r": 255, "b": 255}, "state": "ON"}'
     - delay: 00:01:00
 
 # High temperature warning (livingroom - sensor 2)
@@ -74,7 +79,7 @@
     entity_id: sensor.sn2_humidity
   condition:
     condition: template
-    value_template: '{{ (states("sensor.sn2_humidity") | float) > (55 | float) }}'
+    value_template: '{{ (states("sensor.sn2_humidity") | float) > (60 | float) }}'
   action:
     - service: tts.google_say
       entity_id: media_player.living_room_home
@@ -89,14 +94,22 @@
         topic: 'home/sensornode2/set'
         payload: '{"color": {"g": 0, "r": 0, "b": 255}, "state": "ON"}'
     - delay: 00:01:00
+    - service: mqtt.publish
+      data_template:
+        topic: 'home/sensornode2/set'
+        payload: '{"color": {"g": 255, "r": 255, "b": 255}, "state": "ON"}'
+    - delay: 00:01:00
 
 # Rain Alert
 - alias: 'Raining'
   trigger:
-    platform: state
-    entity_id: sensor.dark_sky_precip_intensity
-    from: '0'
-    to: '0.4'
+    platform: numeric_state
+    entity_id: sensor.temperature
+    value_template: '{{ states.sensor.dark_sky_precip_intensity.state }}'
+    above: 0.4
+    # platform: state
+    # entity_id: sensor.dark_sky_precip_intensity
+    # to: '0.4'
   action:
     - service: tts.google_say
       entity_id: media_player.living_room_home

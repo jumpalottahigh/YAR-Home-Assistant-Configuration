@@ -52,6 +52,9 @@ history:
 # View all events in a logbook
 logbook:
 
+# Shopping list
+shopping_list:
+
 # Track the sun
 sun:
 
@@ -169,3 +172,18 @@ input_slider:
     min: 1
     max: 150
     step: 10
+
+# Floorplan
+panel_custom:
+  - name: floorplan
+    sidebar_title: Floorplan
+    sidebar_icon: mdi:home
+    url_path: floorplan
+    config: !include floorplan.yaml
+
+script:
+  movies_scene:
+    alias: "Alexa turn on movie scene"
+    sequence:
+      - service: scene.turn_on
+        entity_id: scene.movies
