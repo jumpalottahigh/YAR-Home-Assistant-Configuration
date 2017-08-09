@@ -43,6 +43,15 @@
   optimistic: false
   retain: true
 
+- platform: mqtt
+  name: kitchen_ceiling_lights
+  state_topic: "home/433toMQTT"
+  command_topic: "home/commands/MQTTto433/PLSL_180/433_1"
+  payload_on: "218"
+  payload_off: "226"
+  optimistic: false
+  retain: true
+
 # RF 433 TV backlight
 # Pulselength: 396
 - platform: mqtt

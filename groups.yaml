@@ -85,6 +85,7 @@ kitchen:
   name: Kitchen
   entities:
     - light.kitchen
+    - switch.kitchen_ceiling_lights
     - switch.kitchen_coffee_pot
 living_room:
   name: Living Room
