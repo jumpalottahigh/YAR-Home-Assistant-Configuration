@@ -159,15 +159,28 @@
     - service: homeassistant.turn_off
       entity_id: light.living_room_hue
 
-# Porch ws2812b led strip
-- alias: "Porch Animation Speed"
+# Office ws2812b led strip
+- alias: "Office Animation Speed"
   initial_state: True
   hide_entity: False
   trigger:
     - platform: state
-      entity_id: input_slider.porch_animation_speed
+      entity_id: input_slider.office_animation_speed
   action:
     - service: mqtt.publish
       data_template:
-        topic: "home/porch/set"
+        topic: "home/office/led_strip/set"
+        payload: '{"transition":{{ trigger.to_state.state | int }}}'
+
+# Office ws2812b led strip
+- alias: "Livingroom Animation Speed"
+  initial_state: True
+  hide_entity: False
+  trigger:
+    - platform: state
+      entity_id: input_slider.livingroom_animation_speed
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: "home/livingroom/led_strip/set"
         payload: '{"transition":{{ trigger.to_state.state | int }}}'

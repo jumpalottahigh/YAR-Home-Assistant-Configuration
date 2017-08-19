@@ -107,6 +107,10 @@ switch.livingroom_ball_lights:
   friendly_name: Ball lights
   icon: mdi:lightbulb
 
+switch.livingroom_music_jar:
+  friendly_name: Music jar
+  icon: mdi:lightbulb
+
 switch.kitchen_ceiling_lights:
   friendly_name: Kitchen ceiling
   icon: mdi:lightbulb

@@ -43,10 +43,13 @@ environment:
     - sensor.dark_sky_precip_probability
     - sensor.dark_sky_temperature
     - sun.sun
-    - camera.georgi
+system_and_network_card:
+  name: System and network
+  entities:
     - sensor.speedtest_ping
     - sensor.speedtest_download
     - sensor.speedtest_upload
+    - input_select.current_theme
 backyard_card:
   name: Backyard
   entities:
@@ -73,6 +76,26 @@ sensor_node_2_card:
     - sensor.sn2_ldr
     - sensor.sn2_pir
     - light.sn2_led
+tv_backlight_card:
+  name: TV backlight
+  entities:
+    - switch.livingroom_tv_led
+    - switch.livingroom_tv_led_mode_plus
+    - switch.livingroom_tv_led_mode_minus
+    - switch.livingroom_tv_led_speed_plus
+    - switch.livingroom_tv_led_speed_minus
+    - switch.livingroom_tv_led_demo
+    - switch.livingroom_tv_led_color_plus
+    - switch.livingroom_tv_led_color_minus
+    - switch.livingroom_tv_led_brightness_plus
+    - switch.livingroom_tv_led_brightness_minus
+    - switch.livingroom_tv_led_white
+    - switch.livingroom_tv_led_red
+    - switch.livingroom_tv_led_green
+    - switch.livingroom_tv_led_blue
+    - switch.livingroom_tv_led_yellow
+    - switch.livingroom_tv_led_teal
+    - switch.livingroom_tv_led_purple
 family:
   name: Family
   entities:
@@ -92,6 +115,9 @@ living_room:
   entities:
     - light.living_room
     - light.living_room_hue
+    - light.livingroom_strip
+    - input_slider.livingroom_animation_speed
+    - switch.livingroom_music_jar
     - switch.livingroom_window_lights
     - switch.livingroom_ball_lights
     - switch.livingroom_charger
@@ -100,28 +126,13 @@ living_room:
     - media_player.living_room_home
     - media_player.living_room_tv_2
     - media_player.livingroom_tv
-    - switch.livingroom_tv_led
-    - switch.livingroom_tv_led_mode_plus
-    - switch.livingroom_tv_led_mode_minus
-    - switch.livingroom_tv_led_speed_plus
-    - switch.livingroom_tv_led_speed_minus
-    - switch.livingroom_tv_led_demo
-    - switch.livingroom_tv_led_color_plus
-    - switch.livingroom_tv_led_color_minus
-    - switch.livingroom_tv_led_brightness_plus
-    - switch.livingroom_tv_led_brightness_minus
-    - switch.livingroom_tv_led_white
-    - switch.livingroom_tv_led_red
-    - switch.livingroom_tv_led_green
-    - switch.livingroom_tv_led_blue
-    - switch.livingroom_tv_led_yellow
-    - switch.livingroom_tv_led_teal
-    - switch.livingroom_tv_led_purple
 office:
   name: Office
   entities:
     - light.office
     - light.office_hue
+    - light.office_strip
+    - input_slider.office_animation_speed
     - switch.main_computer
     - binary_sensor.office_door
     - camera.office

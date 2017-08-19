@@ -17,6 +17,8 @@ homeassistant:
 
 # Enables the frontend
 frontend:
+  # Add themes
+  themes: !include themes.yaml
 
 # Add Alexa integration
 emulated_hue:
@@ -166,8 +168,14 @@ light: !include lights.yaml
 scene: !include scenes.yaml
 
 input_slider:
-  porch_animation_speed:
-    name: Porch Animation Speed
+  office_animation_speed:
+    name: Office Animation Speed
+    initial: 150
+    min: 1
+    max: 150
+    step: 10
+  livingroom_animation_speed:
+    name: Livingroom Animation Speed
     initial: 150
     min: 1
     max: 150
@@ -180,10 +188,3 @@ panel_custom:
     sidebar_icon: mdi:home
     url_path: floorplan
     config: !include floorplan.yaml
-
-script:
-  movies_scene:
-    alias: "Alexa turn on movie scene"
-    sequence:
-      - service: scene.turn_on
-        entity_id: scene.movies

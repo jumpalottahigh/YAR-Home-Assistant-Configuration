@@ -20,3 +20,16 @@ sofi_status:
     - sleeping
   initial: standby
   icon: mdi:human-female
+
+# Themes
+current_theme:
+  name: 'Current Theme'
+  options:
+    - 'default'
+    - 'dark_cyan'
+    - 'dark_green'
+    - 'dark_orange'
+    - 'dark_red'
+    - 'midnight'
+  initial: 'default'
+  icon: 'mdi:palette' 

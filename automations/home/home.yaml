@@ -54,7 +54,11 @@
     - service: homeassistant.turn_on
       entity_id: switch.livingroom_ball_lights
     - service: homeassistant.turn_on
+      entity_id: switch.livingroom_music_jar
+    - service: homeassistant.turn_on
       entity_id: switch.livingroom_tv_led_demo
+    - service: homeassistant.turn_on
+      entity_id: light.livingroom_strip
 
 # Set TV backlights to demo when music is playing on Google Home
 - alias: 'Stopping music played on Google Home turn regular TV backlight'
@@ -73,6 +77,9 @@
           entity_id: media_player.living_room_home
           state: 'idle'
   action:
-    #  TODO: add ws2812b led strips
     - service: homeassistant.turn_on
       entity_id: switch.livingroom_tv_led_teal
+    - service: homeassistant.turn_off
+      entity_id: switch.livingroom_music_jar
+    - service: homeassistant.turn_off
+      entity_id: light.livingroom_strip

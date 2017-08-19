@@ -5,7 +5,7 @@
 # Yeelights
 - platform: yeelight
   devices:
-    192.168.10.75:
+    192.168.10.78:
       name: Kids Room
       transition: 1000
       use_music_mode: True
@@ -38,9 +38,39 @@
 
 # ws2812b led strips on WeMos
 - platform: mqtt_json
-  name: "Porch Strip"
-  state_topic: "home/porch"
-  command_topic: "home/porch/set"
+  name: "Office Strip"
+  state_topic: "home/office/led_strip"
+  command_topic: "home/office/led_strip/set"
+  effect: true
+  effect_list:
+    - bpm
+    - candy cane  
+    - confetti  
+    - cyclon rainbow  
+    - dots  
+    - fire  
+    - glitter  
+    - juggle  
+    - lightning
+    - noise  
+    - police all  
+    - police one  
+    - rainbow  
+    - rainbow with glitter  
+    - ripple  
+    - sinelon  
+    - solid  
+    - twinkle  
+  brightness: true
+  flash: true
+  rgb: true
+  optimistic: false
+  qos: 0
+
+- platform: mqtt_json
+  name: "Livingroom Strip"
+  state_topic: "home/livingroom/led_strip"
+  command_topic: "home/livingroom/led_strip/set"
   effect: true
   effect_list:
     - bpm
