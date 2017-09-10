@@ -1,35 +1,24 @@
 # Turn on lights at sunset
-- alias: "Lights on 2 hours before sunset"
+- alias: "Lights on 30 mins before sunset"
   trigger:
     platform: sun
     event: sunset
-    offset: "-02:00:00"
+    offset: "-00:30:00"
   action:
-    - service: homeassistant.turn_on
+    - service: light.turn_on
       data:
         entity_id:
-          - light.living_room_hue
           - light.office_hue
-        brightness: 225
-        color_temp: 327
-        transition: 2
-    - service: homeassistant.turn_on
-      entity_id: switch.livingroom_window_lights
-    - service: homeassistant.turn_on
-      entity_id: switch.livingroom_ball_lights
-    - service: homeassistant.turn_on
-      data:
-        entity_id:
+          - light.living_room_hue
           - light.kids_room
           - light.kitchen
         brightness: 225
-        color_temp: 240
-        rgb_color: [255, 250, 202]
+        color_temp: 327
         transition: 2
     - service: tts.google_say
       entity_id: media_player.living_room_home
       data:
-        message: "Sunset in 2 hours. Turning on all lights."
+        message: "Sunset in half an hour. Turning on all lights."
 
 # Turn off lights at 23:45
 - alias: "Lights off at 23:45 (sun-thu)"
@@ -75,11 +64,11 @@
       data:
         message: "It is now 8pm. Setting the house to night mode."
 
-# Turn off kids room lights at 21:00
-- alias: "Kids room lights off at 21:00"
+# Turn off kids room lights at 20:30
+- alias: "Kids room lights off at 20:30"
   trigger:
     - platform: time
-      at: "21:00"
+      at: "20:30"
   action:
     - service: light.turn_off
       entity_id: light.kids_room

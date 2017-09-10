@@ -61,7 +61,7 @@ shopping_list:
 sun:
 
 # Config panel enabler
-# config:
+config:
 
 # Text to speech
 tts:
@@ -166,6 +166,9 @@ light: !include lights.yaml
 
 # Scenes
 scene: !include scenes.yaml
+
+# Scripts
+script: !include scripts.yaml
 
 input_slider:
   office_animation_speed:

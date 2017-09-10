@@ -39,6 +39,30 @@
       data:
         message: "Georgi has arrived home."
 
+# Sofi comes home
+- alias: "Sofi has arrived home"
+  trigger:
+    platform: zone
+    entity_id: device_tracker.sofiip_sp
+    zone: zone.home
+    event: enter
+  condition:
+    - condition: time
+      after: "15:00:00"
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+        - sat
+  action:
+    - service: tts.google_say
+      entity_id: media_player.living_room_home
+      data:
+        message: "Sofi has arrived home."
+
 # Set TV backlights to demo when music is playing on Google Home
 - alias: 'Playing music on Google Home turns on TV backlight demo'
   trigger:

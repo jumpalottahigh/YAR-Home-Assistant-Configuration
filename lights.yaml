@@ -5,7 +5,7 @@
 # Yeelights
 - platform: yeelight
   devices:
-    192.168.10.78:
+    192.168.10.76:
       name: Kids Room
       transition: 1000
       use_music_mode: True

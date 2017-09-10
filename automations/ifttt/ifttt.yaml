@@ -1,9 +1,0 @@
-# # COMMENTED OUT WHILE DEV
-# #Send event to IFTTT for Maker Channel
-# - alias: "Startup Notification"
-#   trigger:
-#     platform: event
-#     event_type: homeassistant_start
-#   action:
-#     service: ifttt.trigger
-#     data: {"event":"ha_start_event", "value1":"Hello World!"}

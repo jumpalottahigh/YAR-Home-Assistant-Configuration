@@ -155,3 +155,5 @@ light.living_room:
   hidden: true
 light.office:
   hidden: true
+light.all_hue_lights:
+  hidden: true

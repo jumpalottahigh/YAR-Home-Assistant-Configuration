@@ -60,6 +60,7 @@ stairs_card:
   name: Stairs
   entities:
     - light.upstairs
+    - light.downstairs
 sensor_node_1_card:
   name: Sensor Node 1
   entities:
