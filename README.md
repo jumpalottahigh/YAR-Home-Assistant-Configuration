@@ -67,7 +67,7 @@ The `YA`nev `R`esidence (YAR) configuration for [Home Assistant](https://home-as
 
 ### Social Links
 
-- [www.georgiyanev.me](http://www.georgiyanev.me)
+- [www.georgi-yanev.com](http://www.georgi-yanev.com)
 - [blog.georgiyanev.me](http://blog.georgiyanev.me)
 - [Facebook](https://www.facebook.com/jumpalottahigh/)
 - [Twitter](https://www.twitter.com/jumpalottahigh/)
