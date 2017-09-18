@@ -6,28 +6,28 @@ The `YA`nev `R`esidence (YAR) configuration for [Home Assistant](https://home-as
 
 ## Device / Sensor list:
 
-- Google Home
-- Amazon Echo
-- Philips Hue
-- IKEA Tradfri bulbs
-- IKEA Tradfri motion sensors
-- Chromecast 1 and 2
+- [Google Home](https://goo.gl/rE8rmp)
+- [Amazon Echo Dot 2nd Gen](https://amzn.to/2x6Dpus)
+- [Philips Hue](https://amzn.to/2haOccI)
+- [IKEA Tradfri](https://goo.gl/tFJ3nS) bulbs
+- [IKEA Tradfri](https://goo.gl/tFJ3nS) motion sensors
+- [Chromecast 1 and 2](https://goo.gl/ACypXo)
 - Generic IP Camera
 - Android phones as IP cameras
-- Raspberry PI
-- Many ESP8266 chips as NodeMCUs
-- Arduino Leonardo
-- Arduino Nano
-- Raspberry PI Zero
-- DHT22 Temperature and Humidity sensors
-- TEMT6000 LUX sensors
-- TSL2561 LUX sensors
-- DS18B20 Temperature sensors
-- WS2812B Addressable LED strips
-- PIR sensors
+- [Raspberry PI 3 Model B](https://amzn.to/2hbEFCx)
+- Many [ESP8266](https://goo.gl/ifT5X9) chips on NodeMCU boards
+- [Arduino Leonardo](https://goo.gl/npGkYF)
+- [Arduino Nano](https://goo.gl/FrsYyP)
+- [Raspberry PI Zero](https://amzn.to/2hbFE5H)
+- [DHT22 Temperature and Humidity sensors](https://goo.gl/CN7Adp)
+- [TEMT6000 LUX sensors](https://goo.gl/PV9EDn)
+- [TSL2561 LUX sensors](https://goo.gl/BEuFuh)
+- [DS18B20 Temperature sensors](https://goo.gl/R7pGdD)
+- [WS2812B Addressable LED strips](https://goo.gl/TKxsbd)
+- [PIR sensors](https://goo.gl/YMYb1d)
 - Main computer
 - Smart TV
-- 433 MHz RF outlets
+- [433 MHz RF outlets](https://goo.gl/VyJa4h)
 - 433 MHz RF led strips
 - 433 MHz RF door sensors
 
