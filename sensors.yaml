@@ -45,6 +45,10 @@
   unit_of_measurement: "%"
   value_template: '{{ value_json.moisture3 | round(2) }}'
 
+# Xiaomi Mi Flora sensor
+# - platform: miflora
+#   mac: 'C4:7C:8D:64:31:1F'
+
 ### ESP8266 Multisensors - Node 1
 - platform: mqtt
   state_topic: "home/sensornode1"
