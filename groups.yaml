@@ -16,11 +16,11 @@ office_view:
   name: Office
   entities:
     - group.office
-kids_room_view:
+antons_room_view:
   view: yes
-  name: Kids room
+  name: Antons room
   entities:
-    - group.kids_room
+    - group.antons_room
 family_view:
   view: yes
   name: Family
@@ -139,8 +139,8 @@ office:
     - camera.office
     - switch.office_frontfacing_camera
     - switch.office_torch
-kids_room:
-  name: Kids Room
+antons_room:
+  name: Antons Room
   entities:
-    - light.kids_room
-    - camera.kids_room
+    - light.antons_room
+    - camera.antons_room

@@ -10,5 +10,5 @@
   limit_refetch_to_url_change: true
 
 - platform: mjpeg
-  name: Kids room
-  mjpeg_url: !secret camera_kids_room_ip_credentials
+  name: Antons room
+  mjpeg_url: !secret camera_antons_room_ip_credentials

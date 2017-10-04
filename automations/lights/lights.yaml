@@ -10,7 +10,7 @@
         entity_id:
           - light.office_hue
           - light.living_room_hue
-          - light.kids_room
+          - light.antons_room
           - light.kitchen
         brightness: 225
         color_temp: 327
@@ -54,7 +54,7 @@
         entity_id:
           - light.office_hue
           - light.living_room_hue
-          - light.kids_room
+          - light.antons_room
           - light.kitchen
         brightness: 100
         color_temp: 410
@@ -64,14 +64,14 @@
       data:
         message: "It is now 8pm. Setting the house to night mode."
 
-# Turn off kids room lights at 20:30
-- alias: "Kids room lights off at 20:30"
+# Turn off Anton's room lights at 20:30
+- alias: "Anton's room lights off at 20:30"
   trigger:
     - platform: time
       at: "20:30"
   action:
     - service: light.turn_off
-      entity_id: light.kids_room
+      entity_id: light.antons_room
 
 # LUX SENSOR BASED AUTOMATIONS
 # Turn on office light based on LUX sensor
