@@ -20,6 +20,11 @@ frontend:
   # Add themes
   themes: !include themes.yaml
 
+# Duck DNS
+duckdns:
+  domain: !secret duckdns_domain
+  access_token: !secret duckdns_token
+
 # Add Alexa integration
 emulated_hue:
   host_ip: !secret emulated_hue_ip
@@ -32,6 +37,8 @@ http:
   api_password: !secret ha_api_password
   # Uncomment this if you are using SSL or running in Docker etc
   # base_url: example.duckdns.org:8123
+
+map:
 
 # Tradfri
 tradfri:
@@ -170,7 +177,7 @@ scene: !include scenes.yaml
 # Scripts
 script: !include scripts.yaml
 
-input_slider:
+input_number:
   office_animation_speed:
     name: Office Animation Speed
     initial: 150
@@ -191,3 +198,8 @@ panel_custom:
     sidebar_icon: mdi:home
     url_path: floorplan
     config: !include floorplan.yaml
+
+# Todoist
+calendar:
+  - platform: todoist
+    token: !secret todoist_api_token

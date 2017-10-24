@@ -117,7 +117,7 @@ living_room:
     - light.living_room
     - light.living_room_hue
     - light.livingroom_strip
-    - input_slider.livingroom_animation_speed
+    - input_number.livingroom_animation_speed
     - switch.livingroom_music_jar
     - switch.livingroom_window_lights
     - switch.livingroom_ball_lights
@@ -133,7 +133,7 @@ office:
     - light.office
     - light.office_hue
     - light.office_strip
-    - input_slider.office_animation_speed
+    - input_number.office_animation_speed
     - switch.main_computer
     - binary_sensor.office_door
     - camera.office

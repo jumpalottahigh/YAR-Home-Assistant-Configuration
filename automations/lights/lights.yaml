@@ -14,7 +14,7 @@
           - light.kitchen
         brightness: 225
         color_temp: 327
-        transition: 2
+        transition: 5
     - service: tts.google_say
       entity_id: media_player.living_room_home
       data:
@@ -34,8 +34,13 @@
         - thu
         - sun
   action:
-    - service: homeassistant.turn_off
-      entity_id: group.all_lights
+    - service: light.turn_off
+      data:
+        entity_id:
+          - light.office_hue
+          - light.living_room_hue
+          - light.kitchen
+        transition: 5
     - service: homeassistant.turn_off
       entity_id: switch.livingroom_window_lights
     - service: homeassistant.turn_off
@@ -43,7 +48,7 @@
     - service: homeassistant.turn_off
       entity_id: switch.livingroom_charger
 
-# Dim lights at 20:00 for night mode
+# SUMMER: Dim lights at 20:00 for night mode
 - alias: "Dim lights to night mode at 20:00"
   trigger:
     - platform: time
@@ -58,7 +63,7 @@
           - light.kitchen
         brightness: 100
         color_temp: 410
-        transition: 2
+        transition: 5
     - service: tts.google_say
       entity_id: media_player.living_room_home
       data:
@@ -154,7 +159,7 @@
   hide_entity: False
   trigger:
     - platform: state
-      entity_id: input_slider.office_animation_speed
+      entity_id: input_number.office_animation_speed
   action:
     - service: mqtt.publish
       data_template:
@@ -167,9 +172,37 @@
   hide_entity: False
   trigger:
     - platform: state
-      entity_id: input_slider.livingroom_animation_speed
+      entity_id: input_number.livingroom_animation_speed
   action:
     - service: mqtt.publish
       data_template:
         topic: "home/livingroom/led_strip/set"
         payload: '{"transition":{{ trigger.to_state.state | int }}}'
+
+# Turn on morning lights before work at 6:50
+- alias: Turn on morning lights before work at 6:50
+  trigger:
+    - platform: time
+      at: "06:50"
+  condition:
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+  action:
+    - service: light.turn_on
+      data:
+        entity_id:
+          - light.office_hue
+          - light.kitchen
+        brightness: 200
+        color_temp: 300
+        transition: 50
+    - delay: 00:20:00
+    - service: light.turn_off
+      entity_id:
+        - light.office_hue
+        - light.kitchen
