@@ -1,6 +1,5 @@
-tradfri.conf
+*.conf
 secrets.yaml
-phue.conf
 known_devices.yaml
 home-assistant_v2.db
 emulated_hue_ids.json

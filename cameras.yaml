@@ -1,12 +1,12 @@
 # Shows device_tracker.georgi_6p_georgi_6p on a map.
 - platform: generic
   name: Georgi's position
-  still_image_url: https://maps.googleapis.com/maps/api/staticmap?center={{ states.device_tracker.georgi6p_gp.attributes.latitude }},{{ states.device_tracker.georgi6p_gp.attributes.longitude }}&zoom=15&size=500x500&maptype=roadmap&markers=color:blue%7Clabel:P%7C{{ states.device_tracker.georgi6p_gp.attributes.latitude }},{{ states.device_tracker.georgi6p_gp.attributes.longitude }}
+  still_image_url: https://maps.googleapis.com/maps/api/staticmap?center={{ states.device_tracker.username_gp.attributes.latitude }},{{ states.device_tracker.username_gp.attributes.longitude }}&zoom=15&size=500x500&maptype=roadmap&markers=color:blue%7Clabel:P%7C{{ states.device_tracker.username_gp.attributes.latitude }},{{ states.device_tracker.username_gp.attributes.longitude }}
   limit_refetch_to_url_change: true
 
 - platform: generic
   name: Sofi's position
-  still_image_url: https://maps.googleapis.com/maps/api/staticmap?center={{ states.device_tracker.sofiip_sp.attributes.latitude }},{{ states.device_tracker.sofiip_sp.attributes.longitude }}&zoom=15&size=500x500&maptype=roadmap&markers=color:blue%7Clabel:P%7C{{ states.device_tracker.sofiip_sp.attributes.latitude }},{{ states.device_tracker.sofiip_sp.attributes.longitude }}
+  still_image_url: https://maps.googleapis.com/maps/api/staticmap?center={{ states.device_tracker.username_sp.attributes.latitude }},{{ states.device_tracker.username_sp.attributes.longitude }}&zoom=15&size=500x500&maptype=roadmap&markers=color:blue%7Clabel:P%7C{{ states.device_tracker.username_sp.attributes.latitude }},{{ states.device_tracker.username_sp.attributes.longitude }}
   limit_refetch_to_url_change: true
 
 - platform: mjpeg

@@ -140,10 +140,6 @@ sensor.sn2_ldr:
 sensor.sn2_pir:
   icon: mdi:run
 
-# Hide HA device tracker
-device_tracker.username_gp:
-  hidden: true
-
 # Hide useless android camera sensors
 sensor.office_audio_connections:
   hidden: true
@@ -156,4 +152,8 @@ light.living_room:
 light.office:
   hidden: true
 light.all_hue_lights:
+  hidden: true
+
+# Hide Tradfri groups
+light.tradfri_group:
   hidden: true

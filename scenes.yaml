@@ -35,3 +35,13 @@
     switch.livingroom_tv_led_demo: on
     switch.livingroom_ball_lights: on
     switch.livingroom_window_lights: on
+- name: Shutdown
+  entities:
+    group.all_lights: off
+    switch.livingroom_ball_lights: off
+    switch.livingroom_window_lights: off
+    switch.livingroom_charger: off
+    switch.livingroom_music_jar: off
+    switch.kitchen_ceiling_lights: off
+# Coming soon
+# - name: Christmas

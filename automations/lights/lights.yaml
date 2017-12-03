@@ -10,7 +10,6 @@
         entity_id:
           - light.office_hue
           - light.living_room_hue
-          - light.antons_room
           - light.kitchen
         brightness: 225
         color_temp: 327

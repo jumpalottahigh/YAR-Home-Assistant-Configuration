@@ -19,11 +19,8 @@ homeassistant:
 frontend:
   # Add themes
   themes: !include themes.yaml
-
-# Duck DNS
-duckdns:
-  domain: !secret duckdns_domain
-  access_token: !secret duckdns_token
+  # Enable ES6 features
+  javascript_version: latest
 
 # Add Alexa integration
 emulated_hue:
@@ -33,18 +30,12 @@ emulated_hue:
   # type: google_home
 
 http:
-  # Uncomment this to add a password (recommended!)
+  base_url: !secret ha_base_url
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
   api_password: !secret ha_api_password
-  # Uncomment this if you are using SSL or running in Docker etc
-  # base_url: example.duckdns.org:8123
 
 map:
-
-# Tradfri
-tradfri:
-  host: !secret tradfri_ip
-  api_key: !secret tradfri_api
-  allow_tradfri_groups: false
 
 # Checks for available updates
 updater:
@@ -87,22 +78,17 @@ media_player:
     name: Livingroom Chromecast
   - platform: cast
     host: !secret google_home_ip
+  - platform: plex
 
 # Mosquitto set up running on HA Pi
 mqtt:
-  client_id: home-assistant-1
-  protocol: 3.1
-  broker: !secret mqtt_broker_mosquitto
-  port: !secret mqtt_port_mosquitto
-  username: !secret mqtt_username_mosquitto
-  password: !secret mqtt_password_mosquitto
+  broker: core-mosquitto
 
 # Device trackers
 device_tracker:
   - platform: owntracks
     max_gps_accuracy: 200
     consider_home: 180
-  # TODO: Work on the know devices list
   - platform: netgear
     host: !secret netgear_ip
     username: !secret netgear_username
@@ -198,8 +184,3 @@ panel_custom:
     sidebar_icon: mdi:home
     url_path: floorplan
     config: !include floorplan.yaml
-
-# Todoist
-calendar:
-  - platform: todoist
-    token: !secret todoist_api_token

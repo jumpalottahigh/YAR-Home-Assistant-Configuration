@@ -107,3 +107,14 @@
       entity_id: switch.livingroom_music_jar
     - service: homeassistant.turn_off
       entity_id: light.livingroom_strip
+
+# Activate 'Movies' scene when Plex is playing
+- alias: 'Playing Plex runs Movies scene'
+  trigger:
+    platform: state
+    # This id should be the TV id
+    entity_id: media_player.tv_ue49ku6675
+    to: 'playing'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.movies

@@ -50,6 +50,12 @@ system_and_network_card:
     - sensor.speedtest_download
     - sensor.speedtest_upload
     - input_select.current_theme
+scenes_card:
+  name: Scenes
+  entities:
+    - scene.movies
+    - scene.party
+    - scene.shutdown
 backyard_card:
   name: Backyard
   entities:
@@ -61,6 +67,7 @@ stairs_card:
   entities:
     - light.upstairs
     - light.downstairs
+    - sensor.stairway
 sensor_node_1_card:
   name: Sensor Node 1
   entities:
@@ -100,8 +107,8 @@ tv_backlight_card:
 family:
   name: Family
   entities:
-    - device_tracker.georgi6p_gp
-    - device_tracker.sofiip_sp
+    - device_tracker.username_gp
+    - device_tracker.username_sp
     - device_tracker.98b8e3e92581
     - input_select.georgi_status
     - input_select.sofi_status
