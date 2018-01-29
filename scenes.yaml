@@ -44,4 +44,29 @@
     switch.livingroom_music_jar: off
     switch.kitchen_ceiling_lights: off
 # Coming soon
-# - name: Christmas
+- name: Christmas
+  entities:
+    light.office_hue:
+      state: on
+      brightness: 90
+      transition: 5
+      effect: colorloop
+    light.kitchen:
+      state: on
+      brightness: 50
+      color_temp: 327
+      transition: 5
+    light.living_room_hue:
+      state: on
+      brightness: 50
+      color_temp: 327
+      transition: 5
+    light.downstairs:
+      state: on
+      brightness: 50
+      color_temp: 327
+      transition: 5
+    light.christmas_tree: on
+    switch.livingroom_ball_lights: on
+    switch.livingroom_window_lights: on
+    switch.livingroom_music_jar: on

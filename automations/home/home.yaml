@@ -1,7 +1,7 @@
 - alias: "Hello Mr. President!"
   trigger:
     platform: zone
-    entity_id: device_tracker.georgi6p_gp
+    entity_id: device_tracker.username_gp
     zone: zone.mr_president
     # Event is either enter or leave
     event: enter  # or "leave"
@@ -14,11 +14,11 @@
       data:
         message: "Hello there, Mr. President!"
 
-# Turn on Main PC when Georgi comes home
-- alias: "Turn on main PC when Georgi comes home"
+# Georgi comes home
+- alias: "Georgi has arrived home"
   trigger:
     platform: zone
-    entity_id: device_tracker.georgi6p_gp
+    entity_id: device_tracker.username_gp
     zone: zone.home
     event: enter
   condition:
@@ -43,12 +43,12 @@
 - alias: "Sofi has arrived home"
   trigger:
     platform: zone
-    entity_id: device_tracker.sofiip_sp
+    entity_id: device_tracker.username_sp
     zone: zone.home
     event: enter
   condition:
     - condition: time
-      after: "15:00:00"
+      after: "16:00:00"
     - condition: time
       weekday:
         - mon
@@ -82,7 +82,7 @@
     - service: homeassistant.turn_on
       entity_id: switch.livingroom_tv_led_demo
     - service: homeassistant.turn_on
-      entity_id: light.livingroom_strip
+      entity_id: light.christmas_tree
 
 # Set TV backlights to demo when music is playing on Google Home
 - alias: 'Stopping music played on Google Home turn regular TV backlight'
@@ -106,7 +106,7 @@
     - service: homeassistant.turn_off
       entity_id: switch.livingroom_music_jar
     - service: homeassistant.turn_off
-      entity_id: light.livingroom_strip
+      entity_id: light.christmas_tree
 
 # Activate 'Movies' scene when Plex is playing
 - alias: 'Playing Plex runs Movies scene'

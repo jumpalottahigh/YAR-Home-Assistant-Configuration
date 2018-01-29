@@ -5,7 +5,7 @@
 # Yeelights
 - platform: yeelight
   devices:
-    192.168.10.78:
+    192.168.10.75:
       name: Antons Room
       transition: 1000
       use_music_mode: True
@@ -68,7 +68,7 @@
   qos: 0
 
 - platform: mqtt_json
-  name: "Livingroom Strip"
+  name: "Christmas Tree"
   state_topic: "home/livingroom/led_strip"
   command_topic: "home/livingroom/led_strip/set"
   effect: true

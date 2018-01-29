@@ -39,6 +39,7 @@
           - light.office_hue
           - light.living_room_hue
           - light.kitchen
+          - light.christmas_tree
         transition: 5
     - service: homeassistant.turn_off
       entity_id: switch.livingroom_window_lights
@@ -58,9 +59,8 @@
         entity_id:
           - light.office_hue
           - light.living_room_hue
-          - light.antons_room
           - light.kitchen
-        brightness: 100
+        brightness: 10
         color_temp: 410
         transition: 5
     - service: tts.google_say
@@ -165,13 +165,13 @@
         topic: "home/office/led_strip/set"
         payload: '{"transition":{{ trigger.to_state.state | int }}}'
 
-# Office ws2812b led strip
-- alias: "Livingroom Animation Speed"
+# Livingroom ws2812b led strip
+- alias: "Christmas Tree Animation Speed"
   initial_state: True
   hide_entity: False
   trigger:
     - platform: state
-      entity_id: input_number.livingroom_animation_speed
+      entity_id: input_number.christmas_tree_animation_speed
   action:
     - service: mqtt.publish
       data_template:

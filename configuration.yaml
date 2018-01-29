@@ -37,6 +37,12 @@ http:
 
 map:
 
+# Tradfri
+# tradfri:
+#   host: !secret tradfri_ip
+#   api_key: !secret tradfri_api
+#   allow_tradfri_groups: false
+
 # Checks for available updates
 updater:
 
@@ -60,6 +66,9 @@ sun:
 
 # Config panel enabler
 config:
+
+# Home Assistant Cloud
+cloud:
 
 # Text to speech
 tts:
@@ -89,6 +98,7 @@ device_tracker:
   - platform: owntracks
     max_gps_accuracy: 200
     consider_home: 180
+  # TODO: Work on the know devices list
   - platform: netgear
     host: !secret netgear_ip
     username: !secret netgear_username
@@ -170,8 +180,8 @@ input_number:
     min: 1
     max: 150
     step: 10
-  livingroom_animation_speed:
-    name: Livingroom Animation Speed
+  christmas_tree_animation_speed:
+    name: Christmas Tree Animation Speed
     initial: 150
     min: 1
     max: 150

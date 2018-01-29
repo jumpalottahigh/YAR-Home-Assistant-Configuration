@@ -46,3 +46,5 @@
   action:
     - service: switch.turn_on
       entity_id: switch.livingroom_window_lights
+    - service: switch.turn_on
+      entity_id: switch.livingroom_charger

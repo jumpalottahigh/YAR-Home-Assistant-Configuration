@@ -55,6 +55,7 @@ scenes_card:
   entities:
     - scene.movies
     - scene.party
+    - scene.christmas
     - scene.shutdown
 backyard_card:
   name: Backyard
@@ -123,8 +124,8 @@ living_room:
   entities:
     - light.living_room
     - light.living_room_hue
-    - light.livingroom_strip
-    - input_number.livingroom_animation_speed
+    - light.christmas_tree
+    - input_number.christmas_tree_animation_speed
     - switch.livingroom_music_jar
     - switch.livingroom_window_lights
     - switch.livingroom_ball_lights
