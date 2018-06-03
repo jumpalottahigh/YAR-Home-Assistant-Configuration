@@ -9,3 +9,4 @@ www
 .shopping_list.json
 .uuid
 home-assistant.log
+entity_registry.yaml

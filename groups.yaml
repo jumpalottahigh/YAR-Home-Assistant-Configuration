@@ -70,7 +70,7 @@ stairs_card:
     - light.downstairs
     - sensor.stairway
 sensor_node_1_card:
-  name: Sensor Node 1
+  name: Sensor Node Livingroom
   entities:
     - sensor.sn1_temperature
     - sensor.sn1_humidity
@@ -78,7 +78,7 @@ sensor_node_1_card:
     - sensor.sn1_pir
     - light.sn1_led
 sensor_node_2_card:
-  name: Sensor Node 2
+  name: Sensor Node Upstairs
   entities:
     - sensor.sn2_temperature
     - sensor.sn2_humidity
